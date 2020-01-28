@@ -88,8 +88,19 @@ html, body, .app, #app>div, #root {
 
 .page-right{
   float: right;
-  width:45%;
+  width:50%;
   border-style: solid;
   margin-top:2%;
   margin-bottom:2%
+}
+
+.line-item{
+  border-style: solid;
+  margin: 3px 3px 3px 3px;
+  padding: 2px;
+}
+
+.notes{
+  border-style: solid;
+  margin: 3px 3px 3px 3px;
 }

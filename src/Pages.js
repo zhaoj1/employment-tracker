@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
+import LineItems from './LineItems'
+import Details from './Details'
 
 export default class Pages extends Component{
 
@@ -11,10 +13,10 @@ export default class Pages extends Component{
                     <button>list view</button><button>calendar view</button><br></br>
                     <div className='page-contents'>
                         <div className='page-left'>
-                            line items
+                            < LineItems />
                         </div>
                         <div className='page-right'>
-                            selected item info
+                            < Details />
                         </div>
                     </div>
                 </div>
