@@ -7,7 +7,7 @@ export default class Pages extends Component{
 
     render(){
         return(
-            <div className='wrapper'>
+            // <div className='wrapper'>
                 <div className='page'>
                     <h1>{this.props.page}</h1>
                     <button>list view</button><button>calendar view</button><br></br>
@@ -16,11 +16,11 @@ export default class Pages extends Component{
                             < LineItems />
                         </div>
                         <div className='page-right'>
-                            < Details />
+                            < Details page={this.props.page} />
                         </div>
                     </div>
                 </div>
-            </div>
+            // </div>
         )
     }
 }

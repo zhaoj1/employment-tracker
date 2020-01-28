@@ -57,7 +57,7 @@ export default class LineChart extends Component {
 
     render() {
         return (
-            <canvas id="myChart" width="600" height="400"></canvas>
+            <canvas id="myChart" width="600" height="300"></canvas>
         )
     }
 
