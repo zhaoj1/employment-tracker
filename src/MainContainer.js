@@ -17,7 +17,7 @@ export default class MainContainer extends Component{
             <div className='main-container'>
                 <Switch>
                     <Route exact path='/' 
-                        render={(routerProps) => <Login {...routerProps} /> }
+                        render={(routerProps) => <Login {...routerProps} setCurrentUser={this.props.setCurrentUser} /> }
                     />
                     <Route exact path='/signup' 
                         render={(routerProps) => <Signup {...routerProps} /> }
