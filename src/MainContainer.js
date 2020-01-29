@@ -20,7 +20,7 @@ export default class MainContainer extends Component{
                         render={(routerProps) => <Login {...routerProps} setCurrentUser={this.props.setCurrentUser} /> }
                     />
                     <Route exact path='/signup' 
-                        render={(routerProps) => <Signup {...routerProps} /> }
+                        render={(routerProps) => <Signup {...routerProps} setCurrentUser={this.props.setCurrentUser} /> }
                     />
                     <Route exact path='/profile' 
                         render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} /> }

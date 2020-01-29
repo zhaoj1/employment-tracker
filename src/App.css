@@ -52,18 +52,59 @@ html, body, .app, #app>div, #root {
 
 .profile {
   height: 100%;
-  width:60%;
+  width:70%;
   border-style: solid;
   margin:auto;
   transform: translate(0, 5%);
   padding-bottom: 20px;
+  display:flex;
+  flex-direction: column;
 }
 
 .profile-analytics-container {
   height: 100%;
   border-style:solid;
-  margin: 0 25px 0 25px;
+  margin: 0 0 0 25px;
   padding: 20px 0 20px 0;
+  float: left;
+  width: 55%;
+}
+
+.to-do{
+  height: 100%;
+  float:right;
+  border-style: solid;
+  margin: 0 15px 0 0;
+  padding: 10px 0 10px 0;
+  width: 38%;
+}
+
+.upcoming{
+  border-style: solid;
+  margin: 0 15px 10px 15px;
+}
+
+.upcoming-title{
+  border-style: solid;
+  border-color:black;
+  background-color: black;
+  color:white;
+  padding: 10px 0 10px 0;
+}
+
+.upcoming-list{
+  display:flex;
+  flex-direction: column;
+}
+
+.upcoming-topic{
+  float: left;
+  margin-left: 5%
+}
+
+.upcoming-date{
+  float: right;
+  margin-right: 5%
 }
 
 .chart-hidden{
@@ -114,3 +155,4 @@ html, body, .app, #app>div, #root {
   border-style: solid;
   margin: 3px 3px 3px 3px;
 }
+

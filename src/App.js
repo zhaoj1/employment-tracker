@@ -7,7 +7,7 @@ import {BrowserRouter as Router} from "react-router-dom";
 export default class App extends React.Component{
 
   state = {
-    currentUser: 'username'
+    currentUser: null
   }
 
   setCurrentUser = (user) => {

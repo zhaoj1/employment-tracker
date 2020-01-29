@@ -15,6 +15,28 @@ export default class Login extends Component{
         })
     }
 
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+
+    //     fetch(`http://localhost:3000/login`,{
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         'Accept': "application/json"
+    //       },
+    //       body: JSON.stringify(this.state)
+    //     })
+    //     .then(res => res.json())
+    //     .then(response => {
+    //       if (response.errors){
+    //         alert('Username or Password incorrect')
+    //       } else {
+    //         this.props.setCurrentUser(response.user)
+    //         this.props.history.push('./main')
+    //       }
+    //     })
+    // }
+
     render(){
         return(
             <div className='wrapper'>
