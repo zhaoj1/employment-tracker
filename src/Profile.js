@@ -19,7 +19,7 @@ export default class Profile extends Component{
         return(
             <div className='wrapper'>
                 <div className='profile'>
-                    <h1 className='profile-username'>{this.props.currentUser}</h1>
+                    <h1 className='profile-username'>{this.props.currentUser.username}</h1>
                     <div className='profile-contents'>
                         <div className='profile-analytics-container'>
                             <button onClick={() => this.selectChart('jobs')}>jobs</button>

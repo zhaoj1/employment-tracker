@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
 import './App.css';
 
 export default class Signup extends Component{
@@ -19,28 +18,31 @@ export default class Signup extends Component{
     handleSubmit = (event) => {
         event.preventDefault();
 
-        fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json'
-            },
-            body: JSON.stringify({
-                username: this.state.username,
-                password: this.state.password
+        if(this.state.password === this.state.passwordConfirm){
+            fetch('http://localhost:3000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify({
+                    username: this.state.username,
+                    password: this.state.password
+                })
             })
-        })
-        .then(res => res.json())
-            .then(response => {
-                if (response.errors){
-                    alert(response.errors)
-                } else {
-                    console.log(response)
-                    // this.props.setCurrentUser(response.user)
-                    this.props.history.push('/main')
-                }
-        })
-        
+            .then(res => res.json())
+                .then(response => {
+                    if (response.errors){
+                        alert(response.errors)
+                    } else {
+                        this.props.setCurrentUser(response.user)
+                        this.props.history.push('/profile')
+                    }
+            })
+        }
+        else{
+            alert('Passwords must match.')
+        }
     }
 
     render(){

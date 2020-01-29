@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+    wrap_parameters :user, include: %i[username password]
+
     def create
         user = User.new(userParams)
         if user.save
@@ -13,7 +16,7 @@ class UsersController < ApplicationController
     def index
         users = User.all
         render json: users
-    end 
+    end
 
     private
 
