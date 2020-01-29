@@ -10,10 +10,10 @@ export default class LineChart extends Component {
         myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['days', 'numbers'], 
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], 
                 datasets: [{
                     label: 'Votes',
-                    data: [props.yay, props.nay],
+                    data: [],
                     borderColor: [
                         'rgb(0,0,0)'
                     ],
@@ -29,16 +29,10 @@ export default class LineChart extends Component {
                     yAxes: [{
                         ticks: {
                             maxRotation: 0,
-                            minRotation: 0,
+                            minRotation: 0, 
                             fontStyle: 'bold'
                         }
-                    }],
-                    xAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            stepSize: 1
-                        }
-                    }],
+                    }]
                 },
             }
         });
