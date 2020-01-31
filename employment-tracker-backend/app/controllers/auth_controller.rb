@@ -1,4 +1,4 @@
-class JobsController < ApplicationController
+class AuthController < ApplicationController
 
     def login
         

@@ -48,7 +48,6 @@ export default class Signup extends Component{
     render(){
         return(
             <div className='wrapper'>
-                {console.log(this.state)}
                 <div className='login'>
                     <form className='signup-form' onSubmit={this.handleSubmit}>
                         <input 

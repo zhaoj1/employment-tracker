@@ -13,35 +13,41 @@ export default class Login extends Component{
         this.setState({
             [event.target.name]: event.target.value
         })
+        console.log(this.state)
     }
 
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
 
-    //     fetch(`http://localhost:3000/login`,{
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         'Accept': "application/json"
-    //       },
-    //       body: JSON.stringify(this.state)
-    //     })
-    //     .then(res => res.json())
-    //     .then(response => {
-    //       if (response.errors){
-    //         alert('Username or Password incorrect')
-    //       } else {
-    //         this.props.setCurrentUser(response.user)
-    //         this.props.history.push('./main')
-    //       }
-    //     })
-    // }
+        fetch(`http://localhost:3000/login`,{
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            'Accept': "application/json"
+            },
+            body: JSON.stringify({
+                username: this.state.username,
+                password: this.state.password
+            })
+        })
+        .then(res => res.json())
+        .then(response => {
+            if (response.errors){
+                alert('Username or Password incorrect')
+            } else {
+                this.props.setCurrentUser(response.user)
+                console.log(this.props)
+                console.log(response)
+                // this.props.history.push('/profile')
+            }
+        })
+    }
 
     render(){
         return(
             <div className='wrapper'>
                 <div className='login'>
-                    <form className='login-form' >
+                    <form className='login-form' onSubmit={this.handleSubmit}>
                         <input 
                             type='text' 
                             name='username' 

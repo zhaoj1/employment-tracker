@@ -9,7 +9,7 @@ class UsersController < ApplicationController
             token = encode_token(user.id)
             render json: {user: user, token: token}
         else
-            render json: {errors: user.errors.full_messages}
+            render json: {errors: user.errors.full_messages}, status: :not_acceptable
         end
     end
 

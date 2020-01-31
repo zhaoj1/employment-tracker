@@ -17,10 +17,16 @@ export default class MainContainer extends Component{
             <div className='main-container'>
                 <Switch>
                     <Route exact path='/' 
-                        render={(routerProps) => <Login {...routerProps} setCurrentUser={this.props.setCurrentUser} /> }
+                        render={(routerProps) => <Login {...routerProps} 
+                            setCurrentUser={this.props.setCurrentUser} 
+                            currentUser={this.props.currentUser}
+                        /> }
                     />
                     <Route exact path='/signup' 
-                        render={(routerProps) => <Signup {...routerProps} setCurrentUser={this.props.setCurrentUser} /> }
+                        render={(routerProps) => <Signup {...routerProps} 
+                            setCurrentUser={this.props.setCurrentUser} 
+                            currentUser={this.props.currentUser}
+                        /> }
                     />
                     <Route exact path='/profile' 
                         render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} /> }

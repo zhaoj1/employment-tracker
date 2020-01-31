@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     def encode_token(id)
-        JWT.encode({user_id: id}, 'secret')
+        JWT.encode({user_id: id}, 'secret') 
     end
 
     def get_auth_header
@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
     def decoded_token
         begin
-            JWT.decode(get_auth_header, 'secret')[0]['user_id']
+            JWT.decode(get_auth_header, true, 'secret')[0]['user_id'] 
         rescue
             nil
         end
