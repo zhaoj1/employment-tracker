@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  topic: MyString
+  date_completed: 2020-01-29
+
+two:
+  topic: MyString
+  date_completed: 2020-01-29

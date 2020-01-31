@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import NavBar from './NavBar'
+import MainContainer from './MainContainer'
 import './App.css';
+import {BrowserRouter as Router} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component{
+
+  state = {
+    currentUser: null
+  }
+
+  setCurrentUser = (user) => {
+    this.setState({
+      currentUser: user
+    })
+  }
+
+  render(){
+    return (
+      <div className="App">
+        {console.log(this.state)}
+        <Router>
+          <NavBar 
+            currentUser={this.state.currentUser} 
+          />
+          <MainContainer 
+            currentUser={this.state.currentUser} 
+            setCurrentUser={this.setCurrentUser} 
+          />
+        </Router>
+      </div>
+    ) 
+  };
 }
-
-export default App;

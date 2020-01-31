@@ -1,38 +1,158 @@
-.App {
+html, body, .app, #app>div, #root {
+  height: 100%;
+}
+
+.App{
+  height:100%;
+}
+
+.navbar {
+  position: fixed;
+  width:100%;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(200,200,200);
+  height: 50px;
+  font-size:25px;
+}
+
+.navbar-items{
+  margin-top:0.5%;
+}
+
+.title {
+  float: left;
+  margin-left:1%;
+}
+
+.nav-btns-container {
+  float: right;
+  margin-right:6.5%;
+}
+
+.nav-btns{
+  margin-right:3%;
+  text-decoration: none;
+}
+
+.main-container {
+  /* margin-top: 60px; */
+  height: 100%;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.profile {
+  height: 100%;
+  width:70%;
+  border-style: solid;
+  margin:auto;
+  transform: translate(0, 5%);
+  padding-bottom: 20px;
+  display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-analytics-container {
+  height: 100%;
+  border-style:solid;
+  margin: 0 0 0 25px;
+  padding: 20px 0 20px 0;
+  float: left;
+  width: 55%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.to-do{
+  height: 100%;
+  float:right;
+  border-style: solid;
+  margin: 0 15px 0 0;
+  padding: 10px 0 10px 0;
+  width: 38%;
 }
+
+.upcoming{
+  border-style: solid;
+  margin: 0 15px 10px 15px;
+}
+
+.upcoming-title{
+  border-style: solid;
+  border-color:black;
+  background-color: black;
+  color:white;
+  padding: 10px 0 10px 0;
+}
+
+.upcoming-list{
+  display:flex;
+  flex-direction: column;
+}
+
+.upcoming-topic{
+  float: left;
+  margin-left: 5%
+}
+
+.upcoming-date{
+  float: right;
+  margin-right: 5%
+}
+
+.chart-hidden{
+  visibility: hidden;
+}
+
+#myChart { 
+  margin-left: 50%;
+  transform: translate(-50%)
+}
+
+.page {
+  width: 60%;
+  border-style:solid;
+  margin: auto;
+  margin-top:10%;
+  text-align:center;
+}
+
+.page-contents{
+  display:flex;
+  justify-content: space-around;
+}
+
+.page-left{
+  float:left;
+  width:45%;
+  border-style: solid;
+  margin-top:2%;
+  margin-bottom:2%
+}
+
+.page-right{
+  float: right;
+  width:50%;
+  border-style: solid;
+  margin-top:2%;
+  margin-bottom:2%
+}
+
+.line-item{
+  border-style: solid;
+  margin: 3px 3px 3px 3px;
+  padding: 2px;
+}
+
+.notes{
+  border-style: solid;
+  margin: 3px 3px 3px 3px;
+}
+

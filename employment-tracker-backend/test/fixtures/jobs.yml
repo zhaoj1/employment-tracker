@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  application_info: MyString
+  company_name: MyString
+  job_title: MyString
+  link: MyString
+  date_applied: 2020-01-29
+
+two:
+  title: MyString
+  application_info: MyString
+  company_name: MyString
+  job_title: MyString
+  link: MyString
+  date_applied: 2020-01-29
