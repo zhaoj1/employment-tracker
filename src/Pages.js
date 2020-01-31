@@ -7,20 +7,24 @@ export default class Pages extends Component{
 
     render(){
         return(
-            // <div className='wrapper'>
                 <div className='page'>
-                    <h1>{this.props.page}</h1>
-                    <button>list view</button><button>calendar view</button><br></br>
-                    <div className='page-contents'>
-                        <div className='page-left'>
-                            < LineItems />
-                        </div>
-                        <div className='page-right'>
-                            < Details page={this.props.page} />
-                        </div>
-                    </div>
+                    {!this.props.currentUser ? 
+                        this.props.history.push('/')
+                        :
+                        <>
+                            <h1>{this.props.page}</h1>
+                            <button>list view</button><button>calendar view</button><br></br>
+                            <div className='page-contents'>
+                                <div className='page-left'>
+                                    < LineItems />
+                                </div>
+                                <div className='page-right'>
+                                    < Details page={this.props.page} />
+                                </div>
+                            </div>
+                        </>
+                    }
                 </div>
-            // </div>
         )
     }
 }

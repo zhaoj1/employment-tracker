@@ -25,10 +25,7 @@ export default class Login extends Component{
             "Content-Type": "application/json",
             'Accept': "application/json"
             },
-            body: JSON.stringify({
-                username: this.state.username,
-                password: this.state.password
-            })
+            body: JSON.stringify(this.state)
         })
         .then(res => res.json())
         .then(response => {
@@ -36,9 +33,7 @@ export default class Login extends Component{
                 alert('Username or Password incorrect')
             } else {
                 this.props.setCurrentUser(response.user)
-                console.log(this.props)
-                console.log(response)
-                // this.props.history.push('/profile')
+                this.props.history.push('/profile')
             }
         })
     }
