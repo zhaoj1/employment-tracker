@@ -14,11 +14,11 @@ export default class NavBar extends Component{
                     <div className='nav-btns-container'>
                         {this.props.currentUser ? 
                             <div>
-                                <Link to='/profile' className='nav-btns'>profile</Link>
-                                <Link to='/jobs' className='nav-btns'>jobs</Link>
-                                <Link to='/interviews' className='nav-btns'>interviews</Link>
-                                <Link to='/meetups' className='nav-btns'>meetups</Link>
-                                <Link to='/algorithms' className='nav-btns'>algorithms</Link>
+                                <Link to='/profile' className='nav-btns' >profile</Link>
+                                <Link to='/jobs' className='nav-btns' >jobs</Link>
+                                <Link to='/interviews' className='nav-btns' >interviews</Link>
+                                <Link to='/meetups' className='nav-btns' >meetups</Link>
+                                <Link to='/algorithms' className='nav-btns' >algorithms</Link>
                                 <Link to='/logout' className='nav-btns'>logout</Link>
                             </div>
                             :

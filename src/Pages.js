@@ -5,6 +5,10 @@ import Details from './Details'
 
 export default class Pages extends Component{
 
+    componentDidMount = () =>{
+        this.props.setPage(this.props.history.location.pathname)
+    }
+
     render(){
         return(
                 <div className='page'>
