@@ -8,7 +8,7 @@ export default class App extends React.Component{
 
   state = {
     currentUser: null,
-    page: null
+    currentPage: null
   }
 
   setCurrentUser = (user) => {
@@ -19,7 +19,7 @@ export default class App extends React.Component{
 
   setPage = (page) => {
     this.setState({
-      page: page
+      currentPage: page
     })
   }
 
@@ -35,6 +35,7 @@ export default class App extends React.Component{
             currentUser={this.state.currentUser} 
             setCurrentUser={this.setCurrentUser} 
             setPage={this.setPage}
+            currentPage={this.state.currentPage}
           />
         </Router>
       </div>

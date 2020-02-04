@@ -9,6 +9,7 @@ import Login from './Login'
 import Signup from './Signup'
 import Profile from './Profile'
 import Pages from './Pages'
+import NewPage from './NewPage'
 
 export default class MainContainer extends Component{
 
@@ -50,16 +51,19 @@ export default class MainContainer extends Component{
                         render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} /> }
                     />
                     <Route exact path='/jobs' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='jobs' setPage={this.props.setPage} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='jobs' setPage={this.props.setPage} currentPage={this.props.currentPage} /> }
                     />
                     <Route exact path='/interviews' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='interviews' setPage={this.props.setPage} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='interviews' setPage={this.props.setPage} currentPage={this.props.currentPage} /> }
                     />
                     <Route exact path='/algorithms' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='algorithms' setPage={this.props.setPage} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='algorithms' setPage={this.props.setPage} currentPage={this.props.currentPage} /> }
                     />
                     <Route exact path='/meetups' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='meetups' setPage={this.props.setPage} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='meetups' setPage={this.props.setPage} currentPage={this.props.currentPage} /> }
+                    />
+                    <Route exact path={this.props.page + '/new'}
+                        render={(routerProps) => <NewPage {...routerProps} currentUser={this.props.currentUser} currentPage={this.props.currentPage} /> }
                     />
                 </Switch>     
             </div>
