@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 import LineItems from './LineItems'
 import Details from './Details'
-import NewPage from './NewPage'
 
 export default class Pages extends Component{
 
@@ -21,7 +20,7 @@ export default class Pages extends Component{
                             <button>list view</button><button>calendar view</button><br></br>
                             <div className='page-contents'>
                                 <div className='page-left'>
-                                    < LineItems currentPage={this.props.currentPage} />
+                                    < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} />
                                 </div>
                                 <div className='page-right'>
                                     < Details page={this.props.page} />
