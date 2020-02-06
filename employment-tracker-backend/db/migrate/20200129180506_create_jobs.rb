@@ -7,6 +7,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.string :job_title
       t.string :link
       t.date :date_applied
+      t.integer :user_id
 
       t.timestamps
     end

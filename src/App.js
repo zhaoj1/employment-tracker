@@ -17,7 +17,7 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    width: '30%',
+    width: '20%',
     textAlign: 'center',
   }
 };
@@ -27,12 +27,15 @@ Modal.setAppElement('#root');
 export default class App extends React.Component{
 
   constructor(){
+
     super();
+
     this.state={
       currentUser: null,
       currentPage: null,
       modalIsOpen: false
     };
+
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -52,7 +55,6 @@ export default class App extends React.Component{
 
   openModal = () => {
     this.setState({modalIsOpen: true});
-    console.log('ok')
   }
  
   afterOpenModal = () => {
@@ -66,10 +68,11 @@ export default class App extends React.Component{
   render(){
     return (
       <div className="App">
-        {console.log(this.state)}
+        {console.log(this.state.currentUser)}
         <Router>
           <NavBar 
             currentUser={this.state.currentUser} 
+            setPage={this.setPage}
           />
           <MainContainer 
             currentUser={this.state.currentUser} 
@@ -86,7 +89,11 @@ export default class App extends React.Component{
            style={customStyles}
            contentLabel="Example Modal"
         >
-          <NewPage />
+          <NewPage 
+            currentUser={this.state.currentUser} 
+            currentPage={this.state.currentPage}
+            closeModal={this.closeModal}
+          />
         </Modal>
       </div>
     ) 

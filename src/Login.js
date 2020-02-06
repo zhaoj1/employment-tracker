@@ -13,7 +13,6 @@ export default class Login extends Component{
         this.setState({
             [event.target.name]: event.target.value
         })
-        console.log(this.state)
     }
 
     handleSubmit = (event) => {
@@ -22,8 +21,8 @@ export default class Login extends Component{
         fetch(`http://localhost:3000/login`,{
             method: "POST",
             headers: {
-            "Content-Type": "application/json",
-            'Accept': "application/json"
+                "Content-Type": "application/json",
+                'Accept': "application/json"
             },
             body: JSON.stringify(this.state)
         })

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_180644) do
   create_table "algos", force: :cascade do |t|
     t.string "topic"
     t.date "date_completed"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_180644) do
     t.string "interviewer"
     t.string "link"
     t.date "date_of_interview"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_180644) do
     t.string "job_title"
     t.string "link"
     t.date "date_applied"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -45,6 +48,8 @@ ActiveRecord::Schema.define(version: 2020_01_29_180644) do
     t.string "topic"
     t.string "location"
     t.date "date_of_meetup"
+    t.string "link"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

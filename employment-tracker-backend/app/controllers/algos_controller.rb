@@ -1,5 +1,7 @@
 class AlgosController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
     def create
         algo = Algo.new(algoParams)
         if algo.save
@@ -10,7 +12,8 @@ class AlgosController < ApplicationController
     end
 
     def index
-        algos = Algo.all
+        user = User.find(params[:user_id])
+        algos = Algo.select{|algo| algo.user_id === user.id}
         render json: algos
     end
 
@@ -27,7 +30,7 @@ class AlgosController < ApplicationController
     private
 
         def algoParams
-            params.require(:algo).permit(:topic, :date_completed)
+            params.require(:algo).permit(:topic, :date_completed, :user_id)
         end
 
 end

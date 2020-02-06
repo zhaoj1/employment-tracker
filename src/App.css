@@ -162,7 +162,7 @@ html, body, .app, #app>div, #root {
 
 .newPageInput{
   font-size: 20px;
-  width:50%;
+  width:80%;
   margin: 0 0 5px 0;
 }
 
@@ -191,4 +191,8 @@ html, body, .app, #app>div, #root {
   margin: 3px 3px 3px 3px;
   text-align: center;
   padding: 5px;
+}
+
+.addNewHeader{
+  
 }

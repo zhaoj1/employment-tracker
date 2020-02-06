@@ -1,5 +1,7 @@
 class InterviewsController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
     def create
         interview = Interview.new(interviewParams)
         if interview.save
@@ -10,7 +12,8 @@ class InterviewsController < ApplicationController
     end
 
     def index
-        interviews = Interview.all
+        user = User.find(params[:user_id])
+        interviews = Interview.select{|interview| interview.user_id === user.id}
         render json: interviews
     end
 
@@ -27,7 +30,7 @@ class InterviewsController < ApplicationController
     private
 
         def interviewParams
-            params.require(:interview).permit(:title, :company_name, :job_title, :interviewer, :link, :date_of_interview)
+            params.require(:interview).permit(:title, :company_name, :job_title, :interviewer, :link, :date_of_interview, :user_id)
         end
 
 end

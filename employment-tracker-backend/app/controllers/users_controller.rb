@@ -13,9 +13,10 @@ class UsersController < ApplicationController
         end
     end
 
-    def index
-        users = User.all
-        render json: users
+    def myJobs
+        user = User.find(params[:id])
+        jobs = user.jobs.select{|job| job.user_id === user.id}
+        render json: user
     end
 
     private

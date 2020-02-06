@@ -1,4 +1,7 @@
 class JobsController < ApplicationController
+
+    skip_before_action :verify_authenticity_token
+
     def create
         job = Job.new(jobParams)
         if job.save
@@ -9,7 +12,8 @@ class JobsController < ApplicationController
     end
 
     def index
-        jobs = Job.all
+        user = User.find(params[:user_id])
+        jobs = Job.select{|job| job.user_id === user.id}
         render json: jobs
     end
 
@@ -26,6 +30,6 @@ class JobsController < ApplicationController
     private
     
         def jobParams
-            params.require(:job).permit(:title, :application_info, :company_name, :job_title, :date_applied, :link)
+            params.require(:job).permit(:title, :application_info, :company_name, :job_title, :date_applied, :link, :user_id)
         end
 end

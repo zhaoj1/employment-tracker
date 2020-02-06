@@ -1,5 +1,10 @@
 class User < ApplicationRecord
 
+    has_many :algos
+    has_many :jobs
+    has_many :interviews
+    has_many :meetups
+
     validates :username, uniqueness: true, presence: true
     # validates :password, presence: true, length: { in: 6..20 }
 
