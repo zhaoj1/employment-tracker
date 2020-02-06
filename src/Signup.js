@@ -57,6 +57,7 @@ export default class Signup extends Component{
                             value={this.state.username}
                             onChange={this.handleChange}
                             required 
+                            className='input'
                         /><br></br>
                         <input 
                             type='password' 
@@ -65,6 +66,7 @@ export default class Signup extends Component{
                             value={this.state.password}
                             onChange={this.handleChange}
                             required 
+                            className='input'
                         /><br></br>
                         <input 
                             type='password' 
@@ -73,8 +75,9 @@ export default class Signup extends Component{
                             value={this.state.passwordConfirm}
                             onChange={this.handleChange}
                             required 
+                            className='input'
                         /><br></br>
-                        <input type='submit' value='Create New Account' />
+                        <input type='submit' value='Create New Account' className='buttons' />
                     </form>
                 </div>
             </div>

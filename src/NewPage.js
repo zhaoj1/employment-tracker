@@ -11,38 +11,44 @@ export default class NewPage extends Component{
                         type='text'
                         name='title'
                         placeholder='Title'
+                        className='newPageInput'
                     >
-                    </input>
+                    </input><br></br>
                     <input
                         type='text'
                         name='application_info'
                         placeholder='Details'
+                        className='newPageInput'
                     >
-                    </input>
+                    </input><br></br>
                     <input
                         type='text'
                         name='company_name'
                         placeholder='Company Name'
+                        className='newPageInput'
                     >
-                    </input>
+                    </input><br></br>
                     <input
                         type='text'
                         name='job_title'
                         placeholder='Job Title'
+                        className='newPageInput'
                     >
-                    </input>
+                    </input><br></br>
                     <input
                         type='text'
                         name='link'
                         placeholder='Link'
+                        className='newPageInput'
                     >   
-                    </input>
+                    </input><br></br>
                     <input
                         type='date'
                         name='date_applied'
+                        className='newPageInput'
                     >
-                    </input>
-                    <input type='submit'></input>
+                    </input><br></br>
+                    <input type='submit' className='buttons' ></input>
                 </form>
             </div>
         )

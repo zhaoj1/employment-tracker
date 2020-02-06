@@ -25,10 +25,10 @@ export default class Profile extends Component{
                         <h1 className='profile-username'>{this.props.currentUser.username}</h1>
                         <div className='profile-contents'>
                             <div className='profile-analytics-container'>
-                                <button onClick={() => this.selectChart('jobs')}>jobs</button>
-                                <button onClick={() => this.selectChart('interviews')}>interviews</button>
-                                <button onClick={() => this.selectChart('meetups')}>meetups</button>
-                                <button onClick={() => this.selectChart('algorithms')}>algorithms</button>
+                                <button onClick={() => this.selectChart('jobs')} className='buttons'>jobs</button>
+                                <button onClick={() => this.selectChart('interviews')} className='buttons'>interviews</button>
+                                <button onClick={() => this.selectChart('meetups')} className='buttons'>meetups</button>
+                                <button onClick={() => this.selectChart('algorithms')} className='buttons'>algorithms</button>
                                 <div className='profile-analytics'>
                                     <div className={this.state.selectedChart? 'chart' : 'chart-hidden'} >
                                         <h1>{this.state.selectedChart}analytics</h1>

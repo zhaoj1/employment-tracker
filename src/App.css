@@ -134,7 +134,8 @@ html, body, .app, #app>div, #root {
   width:45%;
   border-style: solid;
   margin-top:2%;
-  margin-bottom:2%
+  margin-bottom:2%;
+  padding: 3px;
 }
 
 .page-right{
@@ -142,13 +143,16 @@ html, body, .app, #app>div, #root {
   width:50%;
   border-style: solid;
   margin-top:2%;
-  margin-bottom:2%
+  margin-bottom:2%;
+  padding: 3px;
 }
 
 .line-item{
   border-style: solid;
   margin: 3px 3px 3px 3px;
-  padding: 2px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .notes{
@@ -156,3 +160,35 @@ html, body, .app, #app>div, #root {
   margin: 3px 3px 3px 3px;
 }
 
+.newPageInput{
+  font-size: 20px;
+  width:50%;
+  margin: 0 0 5px 0;
+}
+
+.buttons{
+  font-size: 15px;
+  margin: 3px 3px 3px 3px;
+  border-radius:5px;
+}
+
+.input{
+  font-size: 15px;
+  margin: 0 0 5px 0;
+}
+
+.lineItemBtn{
+  float: left;
+}
+
+.lineItemDesc{
+  float: right;
+}
+
+.addItemBtn{
+  margin: auto;
+  border-style: solid;
+  margin: 3px 3px 3px 3px;
+  text-align: center;
+  padding: 5px;
+}

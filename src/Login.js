@@ -50,6 +50,7 @@ export default class Login extends Component{
                             value={this.state.username}
                             onChange={this.handleChange}
                             required 
+                            className='input'
                         /><br></br>
                         <input 
                             type='password' 
@@ -58,10 +59,11 @@ export default class Login extends Component{
                             value={this.state.password}
                             onChange={this.handleChange}
                             required 
+                            className='input'
                         /><br></br>
-                        <input type='submit' />
+                        <input type='submit' className='buttons'  />
                     </form>
-                    <Link to='/signup'><input type='button' value='Sign up' /></Link>
+                    <Link to='/signup'><input type='button' value='Sign up' className='buttons' /></Link>
                 </div>
             </div>
         )

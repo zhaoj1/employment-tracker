@@ -17,10 +17,10 @@ export default class Pages extends Component{
                         :
                         <>
                             <h1>{this.props.page}</h1>
-                            <button>list view</button><button>calendar view</button><br></br>
                             <div className='page-contents'>
                                 <div className='page-left'>
                                     < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} />
+                                    <div className='addItemBtn' onClick={this.props.openModal}>+</div>
                                 </div>
                                 <div className='page-right'>
                                     < Details page={this.props.page} />
