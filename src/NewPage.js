@@ -24,7 +24,7 @@ export default class NewPage extends Component{
         event.preventDefault();
 
         if(this.props.currentPage === '/jobs'){ 
-            fetch('http://localhost:3000/jobs', {
+            fetch(`http://localhost:3000/users/${this.props.currentUser.id}/jobs`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export default class NewPage extends Component{
                 })
             })
         } else if (this.props.currentPage === '/interviews'){
-            fetch('http://localhost:3000/interviews', {
+            fetch(`http://localhost:3000/users/${this.props.currentUser.id}/interviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export default class NewPage extends Component{
                 })
             })
         } else if(this.props.currentPage === '/algorithms'){
-            fetch('http://localhost:3000/algos', {
+            fetch(`http://localhost:3000/users/${this.props.currentUser.id}/algos`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ export default class NewPage extends Component{
                 })
             })
         } else if(this.props.currentPage === '/meetups'){
-            fetch('http://localhost:3000/meetups', {
+            fetch(`http://localhost:3000/users/${this.props.currentUser.id}/meetups`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -86,7 +86,6 @@ export default class NewPage extends Component{
                 })
             })
         }
-        
         this.props.closeModal();
     }
 

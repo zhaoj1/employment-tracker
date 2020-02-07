@@ -33,12 +33,21 @@ export default class App extends React.Component{
     this.state={
       currentUser: null,
       currentPage: null,
-      modalIsOpen: false
+      modalIsOpen: false,
+      jobs: [],
+      interviews: [],
+      meetups: [],
+      algorithms: []
     };
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.fetchInfo = this.fetchInfo.bind(this)
+    this.fetchJobs = this.fetchJobs.bind(this);
+    this.fetchInterviews = this.fetchInterviews.bind(this);
+    this.fetchMeetups = this.fetchMeetups.bind(this);
+    this.fetchAlgos = this.fetchAlgos.bind(this);
   }
 
   setCurrentUser = (user) => {
@@ -65,10 +74,56 @@ export default class App extends React.Component{
     this.setState({modalIsOpen: false});
   }
 
+  fetchJobs = () => {
+    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/jobs`)
+    .then(res => res.json())
+    .then(response => {
+        this.setState({
+            jobs: [...response]
+        })
+    })
+  }
+
+  fetchInterviews = () => {
+    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/interviews`)
+    .then(res => res.json())
+    .then(response => {
+        this.setState({
+            interviews: [...response]
+        })
+    })
+  }
+
+  fetchMeetups = () => {
+    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/meetups`)
+    .then(res => res.json())
+    .then(response => {
+        this.setState({
+            meetups: [...response]
+        })
+    })
+  }
+
+  fetchAlgos = () => {
+    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/algos`)
+    .then(res => res.json())
+    .then(response => {
+        this.setState({
+            algorithms: [...response]
+        })
+    })
+  }
+
+  fetchInfo = () => {
+    this.fetchJobs();
+    this.fetchInterviews();
+    this.fetchMeetups();
+    this.fetchAlgos();
+  }
+
   render(){
     return (
       <div className="App">
-        {console.log(this.state.currentUser)}
         <Router>
           <NavBar 
             currentUser={this.state.currentUser} 
@@ -79,7 +134,16 @@ export default class App extends React.Component{
             setCurrentUser={this.setCurrentUser} 
             setPage={this.setPage}
             currentPage={this.state.currentPage}
-            openModal = {this.openModal}
+            openModal={this.openModal}
+            jobs={this.state.jobs}
+            interviews={this.state.interviews}
+            meetups={this.state.meetups}
+            algorithms={this.state.algorithms}
+            fetchInfo={this.fetchInfo}
+            // fetchJobs={this.fetchJobs}
+            // fetchInterviews={this.fetchInterviews}
+            // fetchMeetups={this.fetchMeetups}
+            // fetchAlgos={this.fetchAlgos}
           />
         </Router>
         <Modal
@@ -87,11 +151,15 @@ export default class App extends React.Component{
            onAfterOpen={this.afterOpenModal}
            onRequestClose={this.closeModal}
            style={customStyles}
-           contentLabel="Example Modal"
         >
           <NewPage 
             currentUser={this.state.currentUser} 
             currentPage={this.state.currentPage}
+            fetchInfo={this.fetchInfo}
+            fetchJobs={this.fetchJobs}
+            fetchInterviews={this.fetchInterviews}
+            fetchMeetups={this.fetchMeetups}
+            fetchAlgos={this.fetchAlgos}
             closeModal={this.closeModal}
           />
         </Modal>

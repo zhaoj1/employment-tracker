@@ -196,3 +196,7 @@ html, body, .app, #app>div, #root {
 .addNewHeader{
   
 }
+
+.plus{
+  pointer-events: none;
+}

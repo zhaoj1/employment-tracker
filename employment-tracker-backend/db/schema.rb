@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_01_29_180644) do
 
   create_table "algos", force: :cascade do |t|
-    t.string "topic"
+    t.string "title"
     t.date "date_completed"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_180644) do
   end
 
   create_table "meetups", force: :cascade do |t|
-    t.string "topic"
+    t.string "title"
     t.string "location"
     t.date "date_of_meetup"
     t.string "link"

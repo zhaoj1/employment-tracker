@@ -5,9 +5,9 @@ import Details from './Details'
 
 export default class Pages extends Component{
 
-    // componentDidMount = () =>{
-    //     this.props.setPage(this.props.history.location.pathname)
-    // }
+    state = {
+        selectedLineItem: {}
+    }
 
     render(){
         return(
@@ -19,11 +19,23 @@ export default class Pages extends Component{
                             <h1>{this.props.page}</h1>
                             <div className='page-contents'>
                                 <div className='page-left'>
-                                    < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} />
-                                    <div className='addItemBtn' onClick={this.props.openModal}>+</div>
+                                    {this.props.userSaved === [] ?
+                                        null
+                                        :
+                                        this.props.userSaved.map(ele => {
+                                            return < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} item={ele} />
+                                        })
+                                    }
+                                    <div className='addItemBtn' onClick={this.props.openModal}>
+                                        <span className='plus'>+</span>
+                                    </div>
                                 </div>
                                 <div className='page-right'>
-                                    < Details page={this.props.page} />
+                                    {this.state.selectedLineItem === {} ?
+                                        null
+                                        :
+                                        < Details page={this.props.page} selectedLineItem={this.state.selectedLineItem} />
+                                    }
                                 </div>
                             </div>
                         </>
