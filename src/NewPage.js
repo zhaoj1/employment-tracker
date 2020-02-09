@@ -20,71 +20,87 @@ export default class NewPage extends Component{
         })
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
 
+        const postJobs = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/jobs`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                title: this.state.title,
+                application_info: this.state.application_info,
+                company_name: this.state.company_name,
+                job_title: this.state.job_title,
+                link: this.state.link,
+                date_applied: new Date(document.getElementById('date').value),
+                user_id: this.props.currentUser.id
+            })
+        })
+
+        const postInterviews = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/interviews`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                title: this.state.title,
+                interviewer: this.state.interviewer,
+                company_name: this.state.company_name,
+                job_title: this.state.job_title,
+                link: this.state.link,
+                date_of_interview: new Date(document.getElementById('date').value),
+                user_id: this.props.currentUser.id
+            })
+        })
+
+        const postAlgos = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/algos`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                topic: this.state.topic,
+                date_completed: new Date(document.getElementById('date').value),
+                user_id: this.props.currentUser.id
+            })
+        })
+
+        const postMeetups = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/meetups`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                topic: this.state.topic,
+                location: this.state.location,
+                link: this.state.link,
+                date_of_meetup: new Date(document.getElementById('date').value),
+                user_id: this.props.currentUser.id
+            })
+        })
+
         if(this.props.currentPage === '/jobs'){ 
-            fetch(`http://localhost:3000/users/${this.props.currentUser.id}/jobs`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json'
-                },
-                body: JSON.stringify({
-                    title: this.state.title,
-                    application_info: this.state.application_info,
-                    company_name: this.state.company_name,
-                    job_title: this.state.job_title,
-                    link: this.state.link,
-                    date_applied: new Date(document.getElementById('date').value),
-                    user_id: this.props.currentUser.id
-                })
-            })
+            if(postJobs){
+                this.props.fetchJobs();
+            }
         } else if (this.props.currentPage === '/interviews'){
-            fetch(`http://localhost:3000/users/${this.props.currentUser.id}/interviews`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json'
-                },
-                body: JSON.stringify({
-                    title: this.state.title,
-                    interviewer: this.state.interviewer,
-                    company_name: this.state.company_name,
-                    job_title: this.state.job_title,
-                    link: this.state.link,
-                    date_of_interview: new Date(document.getElementById('date').value),
-                    user_id: this.props.currentUser.id
-                })
-            })
+            if(postInterviews){
+                this.props.fetchInterviews();
+            }
         } else if(this.props.currentPage === '/algorithms'){
-            fetch(`http://localhost:3000/users/${this.props.currentUser.id}/algos`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json'
-                },
-                body: JSON.stringify({
-                    topic: this.state.topic,
-                    date_completed: new Date(document.getElementById('date').value),
-                    user_id: this.props.currentUser.id
-                })
-            })
+            if(postAlgos){
+                this.props.fetchAlgos();
+            }
         } else if(this.props.currentPage === '/meetups'){
-            fetch(`http://localhost:3000/users/${this.props.currentUser.id}/meetups`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json'
-                },
-                body: JSON.stringify({
-                    topic: this.state.topic,
-                    location: this.state.location,
-                    link: this.state.link,
-                    date_of_meetup: new Date(document.getElementById('date').value),
-                    user_id: this.props.currentUser.id
-                })
-            })
+            if(postMeetups){
+                this.props.fetchMeetups();
+            }
         }
         this.props.closeModal();
     }
