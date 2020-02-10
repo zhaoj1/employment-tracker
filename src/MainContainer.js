@@ -35,7 +35,7 @@ export default class MainContainer extends Component{
                         /> }
                     />
                     <Route exact path='/profile' 
-                        render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} jobs={this.props.jobs} interviews={this.props.interviews} meetups={this.props.meetups} algorithms={this.props.algorithms} /> }
+                        render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} jobs={this.props.jobs} interviews={this.props.interviews} meetups={this.props.meetups} algorithms={this.props.algorithms} fetchInterviews={this.props.fetchInterviews} fetchMeetups={this.props.fetchMeetups} /> }
                     />
                     <Route exact path='/jobs' 
                         render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='jobs' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.jobs} fetchInfo={this.fetchInfo} /> }

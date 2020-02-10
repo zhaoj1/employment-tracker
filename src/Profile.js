@@ -6,7 +6,7 @@ import UpcomingLineItems from './UpcomingLineItems'
 export default class Profile extends Component{
 
     state = {
-        selectedChart: 'jobs'
+        selectedChart: null
     }
 
     selectChart = (selection) => {
@@ -41,13 +41,13 @@ export default class Profile extends Component{
                                     <div className='upcoming-title'>
                                         Upcoming Interviews
                                     </div>
-                                    <UpcomingLineItems />
+                                    <UpcomingLineItems items={this.props.interviews} type='interview'/>
                                 </div>
                                 <div className='upcoming'>
                                     <div className='upcoming-title'>
                                         Upcoming Meetups
                                     </div>
-                                    <UpcomingLineItems />
+                                    <UpcomingLineItems items={this.props.meetups} type='meetup' />
                                 </div>
                             </div>
                         </div>    

@@ -140,10 +140,8 @@ export default class App extends React.Component{
             meetups={this.state.meetups}
             algorithms={this.state.algorithms}
             fetchInfo={this.fetchInfo}
-            // fetchJobs={this.fetchJobs}
-            // fetchInterviews={this.fetchInterviews}
-            // fetchMeetups={this.fetchMeetups}
-            // fetchAlgos={this.fetchAlgos}
+            fetchInterviews={this.fetchInterviews}
+            fetchMeetups={this.fetchMeetups}
           />
         </Router>
         <Modal
