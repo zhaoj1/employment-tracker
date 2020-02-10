@@ -41,13 +41,21 @@ export default class Profile extends Component{
                                     <div className='upcoming-title'>
                                         Upcoming Interviews
                                     </div>
-                                    <UpcomingLineItems items={this.props.interviews} type='interview'/>
+                                    {this.props.interviews.length > 0 ? 
+                                        <UpcomingLineItems items={this.props.interviews} type='interview' />
+                                        :
+                                        null
+                                    }
                                 </div>
                                 <div className='upcoming'>
                                     <div className='upcoming-title'>
                                         Upcoming Meetups
                                     </div>
-                                    <UpcomingLineItems items={this.props.meetups} type='meetup' />
+                                    {this.props.meetups.length > 0 ?
+                                        <UpcomingLineItems items={this.props.meetups} type='meetup' />
+                                        :
+                                        null
+                                    }
                                 </div>
                             </div>
                         </div>    

@@ -5,7 +5,6 @@ export default class NewPage extends Component{
 
     state = {
         title : '',
-        topic: '',
         location: '',
         application_info: '',
         interviewer: '',
@@ -71,7 +70,7 @@ export default class NewPage extends Component{
                     Accept: 'application/json'
                 },
                 body: JSON.stringify({
-                    topic: this.state.topic,
+                    title: this.state.title,
                     date_completed: new Date(document.getElementById('date').value),
                     user_id: this.props.currentUser.id
                 })
@@ -87,7 +86,7 @@ export default class NewPage extends Component{
                     Accept: 'application/json'
                 },
                 body: JSON.stringify({
-                    topic: this.state.topic,
+                    title: this.state.title,
                     location: this.state.location,
                     link: this.state.link,
                     date_of_meetup: new Date(document.getElementById('date').value),
@@ -213,8 +212,8 @@ export default class NewPage extends Component{
                                 <>
                                     <input
                                         type='text'
-                                        name='topic'
-                                        placeholder='Topic'
+                                        name='title'
+                                        placeholder='Title'
                                         className='newPageInput'
                                         onChange={this.handleChange}
                                     >
@@ -233,8 +232,8 @@ export default class NewPage extends Component{
                                     <>
                                         <input
                                             type='text'
-                                            name='topic'
-                                            placeholder='Topic'
+                                            name='title'
+                                            placeholder='Title'
                                             className='newPageInput'
                                             onChange={this.handleChange}
                                         ></input><br></br>
