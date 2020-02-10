@@ -145,6 +145,7 @@ html, body, .app, #app>div, #root {
   margin-top:2%;
   margin-bottom:2%;
   padding: 3px;
+  display: block;
 }
 
 .line-item{
@@ -191,10 +192,6 @@ html, body, .app, #app>div, #root {
   margin: 3px 3px 3px 3px;
   text-align: center;
   padding: 5px;
-}
-
-.addNewHeader{
-  
 }
 
 .plus{

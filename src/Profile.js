@@ -18,7 +18,6 @@ export default class Profile extends Component{
     render(){
         return(
             <div className='wrapper'>
-                {/* {console.log(this.props.userSaved)} */}
                 {!this.props.currentUser?
                     this.props.history.push('/')
                     :
@@ -33,7 +32,7 @@ export default class Profile extends Component{
                                 <div className='profile-analytics'>
                                     <div className={this.state.selectedChart? 'chart' : 'chart-hidden'} >
                                         <h1>{this.state.selectedChart}analytics</h1>
-                                        < LineChart userSaved={this.props.userSaved} />
+                                        < LineChart jobs={this.props.jobs} interviews={this.props.interviews} meetups={this.props.meetups} algorithms={this.props.algorithms} />
                                     </div>
                                 </div>
                             </div>

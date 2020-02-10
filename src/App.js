@@ -124,7 +124,6 @@ export default class App extends React.Component{
   render(){
     return (
       <div className="App">
-        {console.log(this.state)}
         <Router>
           <NavBar 
             currentUser={this.state.currentUser} 

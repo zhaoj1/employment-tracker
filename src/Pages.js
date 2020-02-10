@@ -5,8 +5,26 @@ import Details from './Details'
 
 export default class Pages extends Component{
 
-    state = {
-        selectedLineItem: {}
+    constructor(){
+        super();
+        this.state = {
+            selectedLineItem: {}
+        }
+        this.setSelectedLineItem = this.setSelectedLineItem.bind(this)
+    }
+
+    componentDidUpdate(prevProps){
+        if(prevProps.currentPage !== this.props.currentPage){
+            this.setState({
+                selectedLineItem: {}
+            })
+        }
+    }
+
+    setSelectedLineItem = (item) => {
+        this.setState({
+            selectedLineItem: item
+        })
     }
 
     render(){
@@ -23,19 +41,15 @@ export default class Pages extends Component{
                                         null
                                         :
                                         this.props.userSaved.map(ele => {
-                                            return < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} item={ele} />
+                                            return < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} item={ele} setSelectedLineItem={this.setSelectedLineItem} />
                                         })
                                     }
                                     <div className='addItemBtn' onClick={this.props.openModal}>
                                         <span className='plus'>+</span>
                                     </div>
                                 </div>
-                                <div className='page-right'>
-                                    {this.state.selectedLineItem === {} ?
-                                        null
-                                        :
-                                        < Details page={this.props.page} selectedLineItem={this.state.selectedLineItem} />
-                                    }
+                                <div className={'page-right'}>
+                                    {< Details page={this.props.page} selectedLineItem={this.state.selectedLineItem} />}
                                 </div>
                             </div>
                         </>

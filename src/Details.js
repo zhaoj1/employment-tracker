@@ -9,37 +9,37 @@ export default class Details extends Component{
             <>
                 {this.props.page === 'jobs' ? 
                     <div>
-                        <div className='line-item'>title</div>
-                        <div className='line-item'>application info</div>
-                        <div className='line-item'>company</div>
-                        <div className='line-item'>job title</div>
-                        <div className='line-item'>link</div>
-                        <div className='line-item'>date applied</div>
+                        <div className='line-item'>{this.props.selectedLineItem.title}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.application_info}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.company_name}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.job_title}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.link}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.date_applied}</div>
                     </div>
                 :
                 this.props.page === 'interviews' ?
                     <div>
-                        <div className='line-item'>title</div>
-                        <div className='line-item'>interviewer</div>
-                        <div className='line-item'>company</div>
-                        <div className='line-item'>job title</div>
-                        <div className='line-item'>link</div>
-                        <div className='line-item'>date of interview</div>
+                        <div className='line-item'>{this.props.selectedLineItem.title}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.interviewer}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.company_name}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.job_title}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.link}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.date_of_interview}</div>
                     </div>
                 :
                 this.props.page === 'algorithms' ?
                     <div>
-                        <div className='line-item'>topic</div>
-                        <div className='line-item'>link</div>
-                        <div className='line-item'>date completed</div>
+                        <div className='line-item'>{this.props.selectedLineItem.topic}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.link}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.date_completed}</div>
                     </div>
                 :
                 this.props.page === 'meetups' ?
                     <div>
-                        <div className='line-item'>topic</div>
-                        <div className='line-item'>location</div>
-                        <div className='line-item'>link</div>
-                        <div className='line-item'>date of meetup</div>
+                        <div className='line-item'>{this.props.selectedLineItem.topic}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.location}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.link}</div>
+                        <div className='line-item'>{this.props.selectedLineItem.date_of_meetup}</div>
                     </div>
                 : null
                 }
