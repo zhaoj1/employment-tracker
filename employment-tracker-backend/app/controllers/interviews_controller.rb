@@ -22,6 +22,11 @@ class InterviewsController < ApplicationController
         render json: interview, status: ok
     end
 
+    def update
+        interview = Interview.find(params[:id])
+        interview.update(interviewParams)
+    end
+
     def destroy
         interview = Interview.find(params[:id])
         interview.destroy

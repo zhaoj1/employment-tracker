@@ -35,6 +35,7 @@ export default class Pages extends Component{
                         :
                         <>
                             <h1>{this.props.page}</h1>
+                            {console.log(this.props.userSaved)}
                             <div className='page-contents'>
                                 <div className='page-left'>
                                     {this.props.userSaved === [] ?

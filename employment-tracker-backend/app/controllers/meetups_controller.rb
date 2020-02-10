@@ -18,8 +18,14 @@ class MeetupsController < ApplicationController
     end
 
     def show
+        user = User.find(params[:user_id])
         meetup = Meetup.find(params[:id])
-        render json: meetup, status: ok
+        render json: meetup
+    end
+
+    def update
+        meetup = Meetup.find(params[:id])
+        meetup.update(meetupParams)
     end
 
     def destroy
@@ -30,7 +36,7 @@ class MeetupsController < ApplicationController
     private
 
         def meetupParams
-            params.require(:meetup).permit(:topic, :location, :date_of_meetup, :link, :user_id)
+            params.require(:meetup).permit(:title, :location, :date_of_meetup, :link, :user_id)
         end
 
 end

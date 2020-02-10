@@ -44,7 +44,7 @@ export default class MainContainer extends Component{
                         render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='interviews' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.interviews} fetchInfo={this.fetchInfo} /> }
                     />
                     <Route exact path='/algorithms' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='algorithms' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.interviews} fetchInfo={this.fetchInfo} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='algorithms' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.algorithms} fetchInfo={this.fetchInfo} /> }
                     />
                     <Route exact path='/meetups' 
                         render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='meetups' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.meetups} fetchInfo={this.fetchInfo} /> }

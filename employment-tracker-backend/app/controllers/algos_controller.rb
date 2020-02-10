@@ -22,6 +22,11 @@ class AlgosController < ApplicationController
         render json: algo, status: ok
     end
 
+    def update
+        algo = Algo.find(params[:id])
+        algo.update(algoParams)
+    end
+
     def destroy
         algo = Algo.find(params[:id])
         algo.destroy
@@ -30,7 +35,7 @@ class AlgosController < ApplicationController
     private
 
         def algoParams
-            params.require(:algo).permit(:topic, :date_completed, :user_id)
+            params.require(:algo).permit(:title, :date_completed, :user_id)
         end
 
 end
