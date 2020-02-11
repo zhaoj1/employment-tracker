@@ -35,14 +35,13 @@ export default class Pages extends Component{
                         :
                         <>
                             <h1>{this.props.page}</h1>
-                            {console.log(this.props.userSaved)}
                             <div className='page-contents'>
                                 <div className='page-left'>
                                     {this.props.userSaved === [] ?
                                         null
                                         :
                                         this.props.userSaved.map(ele => {
-                                            return < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} item={ele} setSelectedLineItem={this.setSelectedLineItem} />
+                                            return < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} item={ele} setSelectedLineItem={this.setSelectedLineItem}  setItemToUpdate={this.props.setItemToUpdate} />
                                         })
                                     }
                                     <div className='addItemBtn' onClick={this.props.openModal}>

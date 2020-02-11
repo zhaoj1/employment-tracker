@@ -10,7 +10,45 @@ export default class UpdatePage extends Component{
         interviewer: '',
         company_name: '',
         job_title: '',
-        link: ''
+        link: '',
+        date_applied: null,
+        date_of_interview: null,
+        date_completed: null,
+        date_of_meetup: null
+    }
+
+    componentDidMount(){
+        if(this.props.currentPage == '/jobs'){
+            this.setState({
+                title: this.props.itemtoUpdate.title,
+                application_info: this.props.itemtoUpdate.application_info,
+                company_name: this.props.itemtoUpdate.company_name,
+                job_title: this.props.itemtoUpdate.job_title,
+                link: this.props.itemtoUpdate.link,
+                date_applied: this.props.itemtoUpdate.date_applies
+            })
+        } else if(this.props.currentPage == '/interviews'){
+            this.setState({
+                title: this.props.itemtoUpdate.title,
+                interviewer: this.props.itemtoUpdate.interviewer,
+                company_name: this.props.itemtoUpdate.company_name,
+                job_title: this.props.itemtoUpdate.job_title,
+                link: this.props.itemtoUpdate.link,
+                date_of_interview: this.props.itemtoUpdate.date_applies
+            })
+        } else if(this.props.currentPage == '/algorithms'){
+            this.setState({
+                title: this.props.itemtoUpdate.title,
+                date_completed: this.props.itemtoUpdate.date_applies
+            })
+        } else if(this.props.currentPage == '/meetups'){
+            this.setState({
+                title: this.props.itemtoUpdate.title,
+                location: this.props.itemtoUpdate.location,
+                link: this.props.itemtoUpdate.link,
+                date_of_meetup: this.props.itemtoUpdate.date_applies
+            })  
+        }
     }
 
     handleChange = (event) => {

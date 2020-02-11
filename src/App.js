@@ -5,6 +5,7 @@ import './App.css';
 import {BrowserRouter as Router} from "react-router-dom";
 import Modal from 'react-modal';
 import NewPage from './NewPage'
+import UpdatePage from './UpdatePage'
 
 const customStyles = {
   overlay : {
@@ -34,6 +35,7 @@ export default class App extends React.Component{
       currentUser: null,
       currentPage: null,
       modalIsOpen: false,
+      itemToUpdate: null,
       jobs: [],
       interviews: [],
       meetups: [],
@@ -48,6 +50,7 @@ export default class App extends React.Component{
     this.fetchInterviews = this.fetchInterviews.bind(this);
     this.fetchMeetups = this.fetchMeetups.bind(this);
     this.fetchAlgos = this.fetchAlgos.bind(this);
+    this.setItemToUpdate = this.setItemToUpdate.bind(this);
   }
 
   setCurrentUser = (user) => {
@@ -62,6 +65,13 @@ export default class App extends React.Component{
     })
   }
 
+  setItemToUpdate = (item) => {
+    this.setState({itemToUpdate: item}, () => {
+      this.setState({modalIsOpen: true})
+    })
+    
+  }
+
   openModal = () => {
     this.setState({modalIsOpen: true});
   }
@@ -71,7 +81,10 @@ export default class App extends React.Component{
   }
  
   closeModal = () => {
-    this.setState({modalIsOpen: false});
+    this.setState({
+      modalIsOpen: false,
+      itemToUpdate: null
+    });
   }
 
   fetchJobs = () => {
@@ -142,6 +155,7 @@ export default class App extends React.Component{
             fetchInfo={this.fetchInfo}
             fetchInterviews={this.fetchInterviews}
             fetchMeetups={this.fetchMeetups}
+            setItemToUpdate={this.setItemToUpdate}
           />
         </Router>
         <Modal
@@ -150,16 +164,29 @@ export default class App extends React.Component{
            onRequestClose={this.closeModal}
            style={customStyles}
         >
-          <NewPage 
-            currentUser={this.state.currentUser} 
-            currentPage={this.state.currentPage}
-            fetchInfo={this.fetchInfo}
-            fetchJobs={this.fetchJobs}
-            fetchInterviews={this.fetchInterviews}
-            fetchMeetups={this.fetchMeetups}
-            fetchAlgos={this.fetchAlgos}
-            closeModal={this.closeModal}
-          />
+          {this.state.itemToUpdate ?
+            <UpdatePage 
+              currentUser={this.state.currentUser} 
+              currentPage={this.state.currentPage}
+              itemToUpdate={this.state.itemToUpdate}
+              fetchJobs={this.fetchJobs}
+              fetchInterviews={this.fetchInterviews}
+              fetchMeetups={this.fetchMeetups}
+              fetchAlgos={this.fetchAlgos}
+              closeModal={this.closeModal}
+            />
+            :
+            <NewPage 
+              currentUser={this.state.currentUser} 
+              currentPage={this.state.currentPage}
+              fetchInfo={this.fetchInfo}
+              fetchJobs={this.fetchJobs}
+              fetchInterviews={this.fetchInterviews}
+              fetchMeetups={this.fetchMeetups}
+              fetchAlgos={this.fetchAlgos}
+              closeModal={this.closeModal}
+            />
+          }
         </Modal>
       </div>
     ) 
