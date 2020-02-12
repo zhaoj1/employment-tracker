@@ -19,7 +19,7 @@ class AlgosController < ApplicationController
 
     def show
         algo = Algo.find(params[:id])
-        render json: algo, status: ok
+        render json: algo
     end
 
     def update

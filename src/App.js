@@ -43,7 +43,6 @@ export default class App extends React.Component{
     };
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.fetchInfo = this.fetchInfo.bind(this)
     this.fetchJobs = this.fetchJobs.bind(this);
@@ -74,11 +73,7 @@ export default class App extends React.Component{
 
   openModal = () => {
     this.setState({modalIsOpen: true});
-  }
- 
-  afterOpenModal = () => {
-    
-  }
+  } 
  
   closeModal = () => {
     this.setState({
@@ -156,11 +151,11 @@ export default class App extends React.Component{
             fetchInterviews={this.fetchInterviews}
             fetchMeetups={this.fetchMeetups}
             setItemToUpdate={this.setItemToUpdate}
+            modalIsOpen={this.state.modalIsOpen}
           />
         </Router>
         <Modal
            isOpen={this.state.modalIsOpen}
-           onAfterOpen={this.afterOpenModal}
            onRequestClose={this.closeModal}
            style={customStyles}
         >

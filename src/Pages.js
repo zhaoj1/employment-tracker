@@ -49,7 +49,7 @@ export default class Pages extends Component{
                                     </div>
                                 </div>
                                 <div className={'page-right'}>
-                                    {< Details page={this.props.page} selectedLineItem={this.state.selectedLineItem} />}
+                                    {< Details page={this.props.page} selectedLineItem={this.state.selectedLineItem} modalIsOpen={this.props.modalIsOpen} setSelectedLineItem={this.setSelectedLineItem} />}
                                 </div>
                             </div>
                         </>

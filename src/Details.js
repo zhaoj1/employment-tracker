@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import LineItems from './LineItems'
 
 export default class Details extends Component{
+
+    componentDidUpdate(prevProps){
+        if(prevProps.modalIsOpen !== this.props.modalIsOpen){
+            this.props.setSelectedLineItem({})}
+        }
 
     render(){
         return(

@@ -38,16 +38,16 @@ export default class MainContainer extends Component{
                         render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} jobs={this.props.jobs} interviews={this.props.interviews} meetups={this.props.meetups} algorithms={this.props.algorithms} fetchInterviews={this.props.fetchInterviews} fetchMeetups={this.props.fetchMeetups} /> }
                     />
                     <Route exact path='/jobs' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='jobs' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.jobs} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='jobs' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.jobs} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} modalIsOpen={this.props.modalIsOpen} /> }
                     />
                     <Route exact path='/interviews' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='interviews' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.interviews} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='interviews' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.interviews} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} modalIsOpen={this.props.modalIsOpen} /> }
                     />
                     <Route exact path='/algorithms' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='algorithms' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.algorithms} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='algorithms' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.algorithms} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} modalIsOpen={this.props.modalIsOpen} /> }
                     />
                     <Route exact path='/meetups' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='meetups' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.meetups} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} /> }
+                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='meetups' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.meetups} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} modalIsOpen={this.props.modalIsOpen} /> }
                     />
                 </Switch>     
             </div>
