@@ -50,7 +50,7 @@ export default class Details extends Component{
                 <div className='notes'>
                     notes
                     {/* <LineItems /> */}
-                    <div className='addItemBtn' onClick={this.props.openModal}>+</div>
+                    <div className='addItemBtn' onClick={this.props.openNoteModal}>+</div>
                 </div>
             </>
         )

@@ -8,7 +8,8 @@ export default class Pages extends Component{
     constructor(){
         super();
         this.state = {
-            selectedLineItem: {}
+            selectedLineItem: {},
+            notes: []
         }
         this.setSelectedLineItem = this.setSelectedLineItem.bind(this)
     }
@@ -21,10 +22,18 @@ export default class Pages extends Component{
         }
     }
 
-    setSelectedLineItem = (item) => {
-        this.setState({
-            selectedLineItem: item
+    fetchNotes = () => {
+        fetch(`http://localhost:3000/users/${this.props.currentUser.id}${this.props.currentPage}/${this.state.selectedLineItem.id}/notes`)
+        .then(res => res.json())
+        .then(response => {
+            this.setState({
+                notes: [...response]
+            })
         })
+      }
+
+    setSelectedLineItem = (item) => {
+        this.setState({selectedLineItem: item}, () => {this.fetchNotes()})
     }
 
     render(){
@@ -49,7 +58,7 @@ export default class Pages extends Component{
                                     </div>
                                 </div>
                                 <div className={'page-right'}>
-                                    {< Details page={this.props.page} selectedLineItem={this.state.selectedLineItem} modalIsOpen={this.props.modalIsOpen} setSelectedLineItem={this.setSelectedLineItem} />}
+                                    {< Details page={this.props.page} selectedLineItem={this.state.selectedLineItem} modalIsOpen={this.props.modalIsOpen} setSelectedLineItem={this.setSelectedLineItem} openNoteModal={this.props.openNoteModal} setItemToUpdate={this.props.setItemToUpdate} />}
                                 </div>
                             </div>
                         </>

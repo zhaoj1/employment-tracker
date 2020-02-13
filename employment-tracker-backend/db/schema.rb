@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_180644) do
+ActiveRecord::Schema.define(version: 2020_02_12_203314) do
 
   create_table "algos", force: :cascade do |t|
     t.string "title"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2020_01_29_180644) do
     t.string "location"
     t.date "date_of_meetup"
     t.string "link"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "note"
+    t.string "page_type"
+    t.integer "page_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

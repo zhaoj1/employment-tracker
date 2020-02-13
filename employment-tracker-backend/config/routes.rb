@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   resources :users do 
-    resources :jobs, :interviews, :meetups, :algos
+    resources :jobs, :interviews, :meetups, :algos do
+      resources :notes
+    end
   end
   
   post '/signup', to: "users#create"
