@@ -35,19 +35,79 @@ export default class MainContainer extends Component{
                         /> }
                     />
                     <Route exact path='/profile' 
-                        render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} jobs={this.props.jobs} interviews={this.props.interviews} meetups={this.props.meetups} algorithms={this.props.algorithms} fetchInterviews={this.props.fetchInterviews} fetchMeetups={this.props.fetchMeetups} /> }
+                        render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} jobs={this.props.jobs} interviews={this.props.interviews} meetups={this.props.meetups} algorithms={this.props.algorithms} /> }
                     />
                     <Route exact path='/jobs' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='jobs' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.jobs} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} modalIsOpen={this.props.modalIsOpen} openNoteModal={this.props.openNoteModal} /> }
+                        render={(routerProps) => <Pages 
+                            {...routerProps} 
+                            currentUser={this.props.currentUser} 
+                            page='jobs' 
+                            setPage={this.props.setPage} 
+                            currentPage={this.props.currentPage} 
+                            openModal={this.props.openModal} 
+                            userSaved={this.props.jobs} 
+                            notes={this.props.notes}
+                            fetchInfo={this.fetchInfo} 
+                            setItemToUpdate={this.props.setItemToUpdate} 
+                            modalIsOpen={this.props.modalIsOpen} 
+                            openNoteModal={this.props.openNoteModal} 
+                            selectedLineItem={this.props.selectedLineItem} 
+                            setSelectedLineItem={this.props.setSelectedLineItem} 
+                        /> }
                     />
                     <Route exact path='/interviews' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='interviews' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.interviews} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} modalIsOpen={this.props.modalIsOpen} openNoteModal={this.props.openNoteModal} /> }
+                        render={(routerProps) => <Pages 
+                            {...routerProps}
+                            currentUser={this.props.currentUser}
+                            page='interviews'
+                            setPage={this.props.setPage}
+                            currentPage={this.props.currentPage}
+                            openModal={this.props.openModal}
+                            userSaved={this.props.interviews}
+                            notes={this.props.notes}
+                            fetchInfo={this.fetchInfo}
+                            setItemToUpdate={this.props.setItemToUpdate}
+                            modalIsOpen={this.props.modalIsOpen}
+                            openNoteModal={this.props.openNoteModal}
+                            selectedLineItem={this.props.selectedLineItem}
+                            setSelectedLineItem={this.props.setSelectedLineItem} 
+                        /> }
                     />
                     <Route exact path='/algorithms' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='algorithms' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.algorithms} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} modalIsOpen={this.props.modalIsOpen} openNoteModal={this.props.openNoteModal} /> }
+                        render={(routerProps) => <Pages
+                            {...routerProps}
+                            currentUser={this.props.currentUser}
+                            page='algorithms'
+                            setPage={this.props.setPage}
+                            currentPage={this.props.currentPage}
+                            openModal={this.props.openModal}
+                            userSaved={this.props.algorithms}
+                            notes={this.props.notes}
+                            fetchInfo={this.fetchInfo}
+                            setItemToUpdate={this.props.setItemToUpdate}
+                            modalIsOpen={this.props.modalIsOpen}
+                            openNoteModal={this.props.openNoteModal}
+                            selectedLineItem={this.props.selectedLineItem}
+                            setSelectedLineItem={this.props.setSelectedLineItem} 
+                        /> }
                     />
                     <Route exact path='/meetups' 
-                        render={(routerProps) => <Pages {...routerProps} currentUser={this.props.currentUser} page='meetups' setPage={this.props.setPage} currentPage={this.props.currentPage} openModal={this.props.openModal} userSaved={this.props.meetups} fetchInfo={this.fetchInfo} setItemToUpdate={this.props.setItemToUpdate} modalIsOpen={this.props.modalIsOpen} openNoteModal={this.props.openNoteModal} /> }
+                        render={(routerProps) => <Pages
+                            {...routerProps}
+                            currentUser={this.props.currentUser}
+                            page='meetups'
+                            setPage={this.props.setPage}
+                            currentPage={this.props.currentPage}
+                            openModal={this.props.openModal}
+                            userSaved={this.props.meetups}
+                            notes={this.props.notes}
+                            fetchInfo={this.fetchInfo}
+                            setItemToUpdate={this.props.setItemToUpdate}
+                            modalIsOpen={this.props.modalIsOpen}
+                            openNoteModal={this.props.openNoteModal}
+                            selectedLineItem={this.props.selectedLineItem}
+                            setSelectedLineItem={this.props.setSelectedLineItem}
+                        /> }
                     />
                 </Switch>     
             </div>

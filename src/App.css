@@ -148,17 +148,42 @@ html, body, .app, #app>div, #root {
   display: block;
 }
 
+.page-title{
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 .line-item{
   border-style: solid;
   margin: 3px 3px 3px 3px;
   padding: 5px;
   display: flex;
   justify-content: space-between;
+  background-color: white;
+}
+
+.detail-line-item{
+  border-style: solid;
+  margin: 3px 3px 3px 3px;
+  padding: 5px;
+  text-align: left;
 }
 
 .notes{
   border-style: solid;
   margin: 3px 3px 3px 3px;
+  padding-top: 3px;
+  background-color: black;
+}
+
+.noteLineItemDesc{
+  text-align: left;
+}
+
+.note-title{
+  color:white;
+  font-weight: bold;
 }
 
 .newPageInput{
@@ -192,6 +217,7 @@ html, body, .app, #app>div, #root {
   margin: 3px 3px 3px 3px;
   text-align: center;
   padding: 5px;
+  background-color: white;
 }
 
 .plus{

@@ -4,9 +4,7 @@ import './App.css';
 export default class NewNote extends Component{
 
     state = {
-        note: '',
-        page_type: '',
-        page_id: ''
+        note: ''
     }
 
     handleChange = (event) => {
@@ -18,24 +16,23 @@ export default class NewNote extends Component{
     handleSubmit = async (event) => {
         event.preventDefault();
 
-        console.log(this.props.currentUser)
-        console.log(this.props.selectedLineItem)
-        // const createNote = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/jobs/${this.props.selectedLineItem.id}/notes`, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         Accept: 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         note: this.state.note,
-        //         page_type: '/job',
-        //         page_id: this.props.selectedLineItem.id,
-        //         user_id: this.props.currentUser.id
-        //     })
-        // })
-        // if(createNote){
-            
-        // }
+        const postNotes = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/notes`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                contents: this.state.note,
+                page_type: this.props.currentPage,
+                page_id: this.props.itemToUpdate.id,
+                user_id: this.props.currentUser.id
+            })
+        })
+        if(postNotes){
+            this.props.fetchNotes();
+        }
+        this.props.closeModal();
     }
 
     render(){
@@ -43,13 +40,20 @@ export default class NewNote extends Component{
             <div>
                 <h1 className='addNewHeader'>Add New Note</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <input
+                    {/* <input
                         type='text'
                         name='note'
                         placeholder='Note'
                         className='newPageInput'
                         onChange={this.handleChange}
-                    ></input>
+                    ></input> */}
+                    <textarea 
+                        name='note'
+                        placeholder='Note'
+                        className='newPageInput'
+                        onChange={this.handleChange}
+                        rows='5'
+                    ></textarea>
                     <input type='submit'></input>
                 </form>
             </div>

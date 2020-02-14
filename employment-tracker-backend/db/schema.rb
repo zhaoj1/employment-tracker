@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_203314) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.string "note"
+    t.string "contents"
     t.string "page_type"
     t.integer "page_id"
     t.integer "user_id"

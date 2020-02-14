@@ -38,6 +38,7 @@ export default class App extends React.Component{
       modalIsOpen: false,
       itemToUpdate: null,
       updateNote: false,
+      selectedLineItem: null,
       jobs: [],
       interviews: [],
       meetups: [],
@@ -52,7 +53,9 @@ export default class App extends React.Component{
     this.fetchInterviews = this.fetchInterviews.bind(this);
     this.fetchMeetups = this.fetchMeetups.bind(this);
     this.fetchAlgos = this.fetchAlgos.bind(this);
+    this.fetchNotes = this.fetchNotes.bind(this);
     this.setItemToUpdate = this.setItemToUpdate.bind(this);
+    this.setSelectedLineItem = this.setSelectedLineItem.bind(this);
   }
 
   setCurrentUser = (user) => {
@@ -63,7 +66,8 @@ export default class App extends React.Component{
 
   setPage = (page) => {
     this.setState({
-      currentPage: page
+      currentPage: page,
+      selectedLineItem: null
     })
   }
 
@@ -71,6 +75,10 @@ export default class App extends React.Component{
     this.setState({itemToUpdate: item}, () => {
       this.setState({modalIsOpen: true})
     })
+  }
+
+  setSelectedLineItem = (item) => {
+    this.setState({selectedLineItem: item})
   }
 
   openModal = () => {
@@ -87,6 +95,7 @@ export default class App extends React.Component{
     this.setState({
       modalIsOpen: false,
       itemToUpdate: null,
+      selectedLineItem: null,
       updateNote: false
     });
   }
@@ -131,11 +140,22 @@ export default class App extends React.Component{
     })
   }
 
+  fetchNotes = () => {
+    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/notes`)
+    .then(res => res.json())
+    .then(response => {
+        this.setState({
+            notes: [...response]
+        })
+    })
+  }
+
   fetchInfo = () => {
     this.fetchJobs();
     this.fetchInterviews();
     this.fetchMeetups();
     this.fetchAlgos();
+    this.fetchNotes();
   }
 
   render(){
@@ -156,12 +176,13 @@ export default class App extends React.Component{
             interviews={this.state.interviews}
             meetups={this.state.meetups}
             algorithms={this.state.algorithms}
+            notes={this.state.notes}
             fetchInfo={this.fetchInfo}
-            fetchInterviews={this.fetchInterviews}
-            fetchMeetups={this.fetchMeetups}
             setItemToUpdate={this.setItemToUpdate}
             modalIsOpen={this.state.modalIsOpen}
             openNoteModal={this.openNoteModal}
+            selectedLineItem={this.state.selectedLineItem} 
+            setSelectedLineItem={this.setSelectedLineItem}
           />
         </Router>
         <Modal
@@ -175,6 +196,8 @@ export default class App extends React.Component{
               currentPage={this.state.currentPage}
               closeModal={this.closeModal}
               itemToUpdate={this.state.itemToUpdate}
+              currentPage={this.state.currentPage}
+              fetchNotes={this.fetchNotes}
             />
             :
             this.state.itemToUpdate ?
