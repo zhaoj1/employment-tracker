@@ -7,6 +7,7 @@ import Modal from 'react-modal';
 import NewPage from './NewPage'
 import UpdatePage from './UpdatePage'
 import NewNote from './NewNote'
+import DeleteModal from './DeleteModal'
 
 const customStyles = {
   overlay : {
@@ -38,6 +39,7 @@ export default class App extends React.Component{
       modalIsOpen: false,
       itemToUpdate: null,
       updateNote: false,
+      deleteItem: false,
       selectedLineItem: null,
       jobs: [],
       interviews: [],
@@ -47,6 +49,7 @@ export default class App extends React.Component{
 
     this.openModal = this.openModal.bind(this);
     this.openNoteModal = this.openNoteModal.bind(this);
+    this.openDeleteModal = this.openDeleteModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.fetchInfo = this.fetchInfo.bind(this)
     this.fetchJobs = this.fetchJobs.bind(this);
@@ -90,12 +93,19 @@ export default class App extends React.Component{
       this.setState({modalIsOpen: true, updateNote: true})
     })
   }
+
+  openDeleteModal = (item) => {
+    this.setState({itemToUpdate: item}, () => {
+      this.setState({modalIsOpen: true, deleteItem: true})
+    })
+  }
  
   closeModal = () => {
     this.setState({
       modalIsOpen: false,
       itemToUpdate: null,
       selectedLineItem: null,
+      deleteItem: false,
       updateNote: false
     });
   }
@@ -172,6 +182,7 @@ export default class App extends React.Component{
             setPage={this.setPage}
             currentPage={this.state.currentPage}
             openModal={this.openModal}
+            closeModal={this.closeModal} 
             jobs={this.state.jobs}
             interviews={this.state.interviews}
             meetups={this.state.meetups}
@@ -181,6 +192,7 @@ export default class App extends React.Component{
             setItemToUpdate={this.setItemToUpdate}
             modalIsOpen={this.state.modalIsOpen}
             openNoteModal={this.openNoteModal}
+            openDeleteModal={this.openDeleteModal}
             selectedLineItem={this.state.selectedLineItem} 
             setSelectedLineItem={this.setSelectedLineItem}
           />
@@ -190,39 +202,49 @@ export default class App extends React.Component{
            onRequestClose={this.closeModal}
            style={customStyles}
         >
-          {this.state.updateNote ? 
-            <NewNote 
+          {this.state.deleteItem ?
+            <DeleteModal 
               currentUser={this.state.currentUser} 
               currentPage={this.state.currentPage}
               closeModal={this.closeModal}
               itemToUpdate={this.state.itemToUpdate}
               currentPage={this.state.currentPage}
-              fetchNotes={this.fetchNotes}
+              fetchInfo={this.fetchInfo}
             />
             :
-            this.state.itemToUpdate ?
-              <UpdatePage 
+            this.state.updateNote ? 
+              <NewNote 
                 currentUser={this.state.currentUser} 
                 currentPage={this.state.currentPage}
-                itemToUpdate={this.state.itemToUpdate}
-                fetchJobs={this.fetchJobs}
-                fetchInterviews={this.fetchInterviews}
-                fetchMeetups={this.fetchMeetups}
-                fetchAlgos={this.fetchAlgos}
                 closeModal={this.closeModal}
+                itemToUpdate={this.state.itemToUpdate}
+                currentPage={this.state.currentPage}
+                fetchNotes={this.fetchNotes}
               />
               :
-              <NewPage 
-                currentUser={this.state.currentUser} 
-                currentPage={this.state.currentPage}
-                fetchInfo={this.fetchInfo}
-                fetchJobs={this.fetchJobs}
-                fetchInterviews={this.fetchInterviews}
-                fetchMeetups={this.fetchMeetups}
-                fetchAlgos={this.fetchAlgos}
-                closeModal={this.closeModal}
-              />
-          }
+              this.state.itemToUpdate ?
+                <UpdatePage 
+                  currentUser={this.state.currentUser} 
+                  currentPage={this.state.currentPage}
+                  itemToUpdate={this.state.itemToUpdate}
+                  fetchJobs={this.fetchJobs}
+                  fetchInterviews={this.fetchInterviews}
+                  fetchMeetups={this.fetchMeetups}
+                  fetchAlgos={this.fetchAlgos}
+                  closeModal={this.closeModal}
+                />
+                :
+                <NewPage 
+                  currentUser={this.state.currentUser} 
+                  currentPage={this.state.currentPage}
+                  fetchInfo={this.fetchInfo}
+                  fetchJobs={this.fetchJobs}
+                  fetchInterviews={this.fetchInterviews}
+                  fetchMeetups={this.fetchMeetups}
+                  fetchAlgos={this.fetchAlgos}
+                  closeModal={this.closeModal}
+                />
+            }
         </Modal>
       </div>
     ) 

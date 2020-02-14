@@ -45,14 +45,16 @@ export default class MainContainer extends Component{
                             setPage={this.props.setPage} 
                             currentPage={this.props.currentPage} 
                             openModal={this.props.openModal} 
+                            closeModal={this.props.closeModal} 
                             userSaved={this.props.jobs} 
                             notes={this.props.notes}
-                            fetchInfo={this.fetchInfo} 
+                            fetchInfo={this.props.fetchInfo} 
                             setItemToUpdate={this.props.setItemToUpdate} 
                             modalIsOpen={this.props.modalIsOpen} 
                             openNoteModal={this.props.openNoteModal} 
                             selectedLineItem={this.props.selectedLineItem} 
                             setSelectedLineItem={this.props.setSelectedLineItem} 
+                            openDeleteModal={this.props.openDeleteModal}
                         /> }
                     />
                     <Route exact path='/interviews' 
@@ -63,14 +65,16 @@ export default class MainContainer extends Component{
                             setPage={this.props.setPage}
                             currentPage={this.props.currentPage}
                             openModal={this.props.openModal}
+                            closeModal={this.props.closeModal} 
                             userSaved={this.props.interviews}
                             notes={this.props.notes}
-                            fetchInfo={this.fetchInfo}
+                            fetchInfo={this.props.fetchInfo}
                             setItemToUpdate={this.props.setItemToUpdate}
                             modalIsOpen={this.props.modalIsOpen}
                             openNoteModal={this.props.openNoteModal}
                             selectedLineItem={this.props.selectedLineItem}
                             setSelectedLineItem={this.props.setSelectedLineItem} 
+                            openDeleteModal={this.props.openDeleteModal}
                         /> }
                     />
                     <Route exact path='/algorithms' 
@@ -81,14 +85,16 @@ export default class MainContainer extends Component{
                             setPage={this.props.setPage}
                             currentPage={this.props.currentPage}
                             openModal={this.props.openModal}
+                            closeModal={this.props.closeModal} 
                             userSaved={this.props.algorithms}
                             notes={this.props.notes}
-                            fetchInfo={this.fetchInfo}
+                            fetchInfo={this.props.fetchInfo}
                             setItemToUpdate={this.props.setItemToUpdate}
                             modalIsOpen={this.props.modalIsOpen}
                             openNoteModal={this.props.openNoteModal}
                             selectedLineItem={this.props.selectedLineItem}
                             setSelectedLineItem={this.props.setSelectedLineItem} 
+                            openDeleteModal={this.props.openDeleteModal}
                         /> }
                     />
                     <Route exact path='/meetups' 
@@ -99,14 +105,16 @@ export default class MainContainer extends Component{
                             setPage={this.props.setPage}
                             currentPage={this.props.currentPage}
                             openModal={this.props.openModal}
+                            closeModal={this.props.closeModal} 
                             userSaved={this.props.meetups}
                             notes={this.props.notes}
-                            fetchInfo={this.fetchInfo}
+                            fetchInfo={this.props.fetchInfo}
                             setItemToUpdate={this.props.setItemToUpdate}
                             modalIsOpen={this.props.modalIsOpen}
                             openNoteModal={this.props.openNoteModal}
                             selectedLineItem={this.props.selectedLineItem}
                             setSelectedLineItem={this.props.setSelectedLineItem}
+                            openDeleteModal={this.props.openDeleteModal}
                         /> }
                     />
                 </Switch>     

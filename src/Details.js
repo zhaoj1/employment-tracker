@@ -6,7 +6,7 @@ export default class Details extends Component{
 
     componentDidUpdate(prevProps){
         if(prevProps.modalIsOpen !== this.props.modalIsOpen){
-            this.props.setSelectedLineItem({})}
+            this.props.setSelectedLineItem(null)}
         }
 
     render(){
@@ -55,6 +55,7 @@ export default class Details extends Component{
                     })}
                     <div className='addItemBtn' onClick={() => this.props.openNoteModal(this.props.selectedLineItem)}>+</div>
                 </div>
+                <button onClick={() => this.props.openDeleteModal(this.props.selectedLineItem)}>DELETE</button>
             </>
         )
     }

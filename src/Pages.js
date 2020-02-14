@@ -19,7 +19,14 @@ export default class Pages extends Component{
                                         null
                                         :
                                         this.props.userSaved.map(ele => {
-                                            return < LineItems currentPage={this.props.currentPage} openModal={this.props.openModal} item={ele} setSelectedLineItem={this.props.setSelectedLineItem}  setItemToUpdate={this.props.setItemToUpdate} />
+                                            return < LineItems
+                                                currentPage={this.props.currentPage}
+                                                openModal={this.props.openModal}
+                                                item={ele}
+                                                setSelectedLineItem={this.props.setSelectedLineItem}
+                                                setItemToUpdate={this.props.setItemToUpdate} 
+                                                currentPage={this.props.currentPage} 
+                                            />
                                         })
                                     }
                                     <div className='addItemBtn' onClick={this.props.openModal}>
@@ -34,12 +41,15 @@ export default class Pages extends Component{
                                         < Details 
                                             page={this.props.page}
                                             selectedLineItem={this.props.selectedLineItem}
+                                            currentUser={this.props.currentUser}
                                             currentPage={this.props.currentPage}
                                             modalIsOpen={this.props.modalIsOpen}
                                             setSelectedLineItem={this.props.setSelectedLineItem}
                                             openNoteModal={this.props.openNoteModal}
                                             setItemToUpdate={this.props.setItemToUpdate} 
                                             notes={this.props.notes}
+                                            fetchInfo={this.props.fetchInfo}
+                                            openDeleteModal={this.props.openDeleteModal}
                                         />
                                     </div>
                                 }
