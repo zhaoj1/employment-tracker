@@ -1,6 +1,6 @@
-class CreateAlgos < ActiveRecord::Migration[6.0]
+class CreateAlgorithms < ActiveRecord::Migration[6.0]
   def change
-    create_table :algos do |t|
+    create_table :algorithms do |t|
       t.string :title
       t.date :date_completed
       t.integer :user_id

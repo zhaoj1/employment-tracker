@@ -2,31 +2,95 @@ import React, { Component } from 'react'
 import Chart from "chart.js";
 
 let myChart 
+let chartData
+let chartInfoType
 
 export default class LineChart extends Component {
 
-    makeChart(props){
+    setData(props){
+        chartData = this.props.selectedChart == 'jobs' ? 
+            [
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '01').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '02').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '03').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '04').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '05').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '06').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '07').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '08').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '09').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '10').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '11').length,
+            props.jobs.filter(job => job.date_applied.split('-')[1] == '12').length
+            ]
+            : this.props.selectedChart == 'interviews' ?
+                [
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '01').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '02').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '03').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '04').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '05').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '06').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '07').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '08').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '09').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '10').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '11').length,
+                props.interviews.filter(interview => interview.date_of_interview.split('-')[1] == '12').length
+                ]
+                : this.props.selectedChart == 'algorithms' ? 
+                    [
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '01').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '02').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '03').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '04').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '05').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '06').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '07').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '08').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '09').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '10').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '11').length,
+                    props.algorithms.filter(algorithm => algorithm.date_completed.split('-')[1] == '12').length
+                    ]
+                        : this.props.selectedChart == 'meetups' ? 
+                            [
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '01').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '02').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '03').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '04').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '05').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '06').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '07').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '08').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '09').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '10').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '11').length,
+                            props.meetups.filter(meetup => meetup.date_of_meetup.split('-')[1] == '12').length
+                            ]
+                            : null
+
+        chartInfoType = this.props.selectedChart == 'jobs' ? 
+            'Jobs Applied'
+            : this.props.selectedChart == 'interviews' ?
+                'Interviews Scheduled'
+                : this.props.selectedChart == 'algorithms' ? 
+                    'Algorithms Completed'
+                        : this.props.selectedChart == 'meetups' ? 
+                            'Meetups RSVP\'d'
+                            : null
+    }
+
+    makeChart(props){         
         const ctx = document.getElementById("myChart");
         myChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], 
                 datasets: [{
-                    label: 'Votes',
-                    data: [
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 1).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 2).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 3).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 4).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 5).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 6).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 7).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 8).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 9).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 10).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 11).length,
-                        props.jobs.filter(job => new Date(job.date_applied).getMonth() == 12).length,
-                    ],
+                    label: chartInfoType,
+                    lineTension: 0,
+                    data: chartData,
                     borderColor: [
                         'rgb(0,0,0)'
                     ],
@@ -34,16 +98,14 @@ export default class LineChart extends Component {
                 }]
             },
             options: {
-                legend: {
-                    display: false
-                },
-                responsive: false,
                 scales: {
                     yAxes: [{
                         ticks: {
                             maxRotation: 0,
                             minRotation: 0, 
-                            fontStyle: 'bold'
+                            fontStyle: 'bold',
+                            precision: 0,
+                            suggestedMax: 5
                         }
                     }]
                 },
@@ -51,23 +113,17 @@ export default class LineChart extends Component {
         });
     }
 
-    async componentDidMount(){
-        const fetchProps = await this.props.fetchInfo()
-        if(fetchProps){
-            this.makeChart(this.props)
-        }
-    }
-
     componentDidUpdate(prevProps){
         if(prevProps !== this.props){
             if(myChart){myChart.destroy()};
-            this.makeChart(this.props)
+            this.setData(this.props);
+            this.makeChart(chartData);
         }
     }
 
     render() {
         return (
-            <canvas id="myChart" width="525" height="300"></canvas>
+            <canvas id="myChart" width="500" height="300"></canvas>
         )
     }
 

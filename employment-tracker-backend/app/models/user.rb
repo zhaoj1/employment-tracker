@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-    has_many :algos
+    has_many :algorithms
     has_many :jobs
     has_many :interviews
     has_many :meetups

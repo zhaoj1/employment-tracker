@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_02_12_203314) do
 
-  create_table "algos", force: :cascade do |t|
+  create_table "algorithms", force: :cascade do |t|
     t.string "title"
     t.date "date_completed"
     t.integer "user_id"

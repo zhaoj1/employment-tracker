@@ -55,7 +55,7 @@ export default class App extends React.Component{
     this.fetchJobs = this.fetchJobs.bind(this);
     this.fetchInterviews = this.fetchInterviews.bind(this);
     this.fetchMeetups = this.fetchMeetups.bind(this);
-    this.fetchAlgos = this.fetchAlgos.bind(this);
+    this.fetchAlgorithms = this.fetchAlgorithms.bind(this);
     this.fetchNotes = this.fetchNotes.bind(this);
     this.setItemToUpdate = this.setItemToUpdate.bind(this);
     this.setSelectedLineItem = this.setSelectedLineItem.bind(this);
@@ -141,8 +141,8 @@ export default class App extends React.Component{
     })
   }
 
-  fetchAlgos = () => {
-    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/algos`)
+  fetchAlgorithms = () => {
+    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/algorithms`)
     .then(res => res.json())
     .then(response => {
         this.setState({
@@ -165,7 +165,7 @@ export default class App extends React.Component{
     this.fetchJobs();
     this.fetchInterviews();
     this.fetchMeetups();
-    this.fetchAlgos();
+    this.fetchAlgorithms();
     this.fetchNotes();
   }
 
@@ -231,7 +231,7 @@ export default class App extends React.Component{
                   fetchJobs={this.fetchJobs}
                   fetchInterviews={this.fetchInterviews}
                   fetchMeetups={this.fetchMeetups}
-                  fetchAlgos={this.fetchAlgos}
+                  fetchAlgorithms={this.fetchAlgorithms}
                   closeModal={this.closeModal}
                 />
                 :
@@ -242,7 +242,7 @@ export default class App extends React.Component{
                   fetchJobs={this.fetchJobs}
                   fetchInterviews={this.fetchInterviews}
                   fetchMeetups={this.fetchMeetups}
-                  fetchAlgos={this.fetchAlgos}
+                  fetchAlgorithms={this.fetchAlgorithms}
                   closeModal={this.closeModal}
                 />
             }

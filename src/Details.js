@@ -35,7 +35,6 @@ export default class Details extends Component{
                 this.props.page === 'algorithms' ?
                     <div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.title}</div>
-                        <div className='detail-line-item'>{this.props.selectedLineItem.link}</div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.date_completed}</div>
                     </div>
                 :

@@ -72,7 +72,7 @@ export default class UpdatePage extends Component{
                     company_name: this.state.company_name,
                     job_title: this.state.job_title,
                     link: this.state.link,
-                    date_applied: new Date(document.getElementById('date').value),
+                    date_applied: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -92,7 +92,7 @@ export default class UpdatePage extends Component{
                     company_name: this.state.company_name,
                     job_title: this.state.job_title,
                     link: this.state.link,
-                    date_of_interview: new Date(document.getElementById('date').value),
+                    date_of_interview: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -100,7 +100,7 @@ export default class UpdatePage extends Component{
                 this.props.fetchInterviews();
             }
         }else if(this.props.currentPage === '/algorithms'){ 
-            const updateAlgorithms = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/algos/${this.props.itemToUpdate.id}`, {
+            const updateAlgorithms = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/algorithms/${this.props.itemToUpdate.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -108,12 +108,12 @@ export default class UpdatePage extends Component{
                 },
                 body: JSON.stringify({
                     title: this.state.title,
-                    date_completed: new Date(document.getElementById('date').value),
+                    date_completed: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
             if(updateAlgorithms){
-                this.props.fetchAlgos();
+                this.props.fetchAlgorithms();
             }
         }else if(this.props.currentPage === '/meetups'){ 
             const updateMeetups = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/meetups/${this.props.itemToUpdate.id}`, {
@@ -126,7 +126,7 @@ export default class UpdatePage extends Component{
                     title: this.state.title,
                     location: this.state.location,
                     link: this.state.link,
-                    date_of_meetup: new Date(document.getElementById('date').value),
+                    date_of_meetup: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
