@@ -26,6 +26,7 @@ export default class MainContainer extends Component{
                         render={(routerProps) => <Login {...routerProps} 
                             setCurrentUser={this.props.setCurrentUser} 
                             currentUser={this.props.currentUser}
+                            fetchInfo={this.props.fetchInfo}
                         /> }
                     />
                     <Route exact path='/signup' 
@@ -35,7 +36,15 @@ export default class MainContainer extends Component{
                         /> }
                     />
                     <Route exact path='/profile' 
-                        render={(routerProps) => <Profile {...routerProps} currentUser={this.props.currentUser} jobs={this.props.jobs} interviews={this.props.interviews} meetups={this.props.meetups} algorithms={this.props.algorithms} /> }
+                        render={(routerProps) => <Profile
+                            {...routerProps}
+                            currentUser={this.props.currentUser}
+                            jobs={this.props.jobs}
+                            interviews={this.props.interviews}
+                            meetups={this.props.meetups}
+                            algorithms={this.props.algorithms}
+                            fetchInfo={this.props.fetchInfo}
+                        /> }
                     />
                     <Route exact path='/jobs' 
                         render={(routerProps) => <Pages 

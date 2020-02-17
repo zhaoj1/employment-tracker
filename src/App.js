@@ -65,6 +65,7 @@ export default class App extends React.Component{
     this.setState({
       currentUser: user
     })
+    this.fetchInfo();
   }
 
   setPage = (page) => {

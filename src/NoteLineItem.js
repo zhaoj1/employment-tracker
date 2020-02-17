@@ -7,6 +7,7 @@ export default class NoteLineItem extends Component{
             <div className='line-item' >
                 <label className='noteLineItemDesc'>{this.props.note.contents}</label>
                 <div className='lineItemBtn' >
+                    <button>Edit</button>
                     <button >X</button>
                 </div>
             </div>

@@ -34,7 +34,7 @@ export default class Login extends Component{
                 this.props.setCurrentUser(response.user)
                 this.props.history.push('/profile')
             }
-        })
+        })        
     }
 
     render(){

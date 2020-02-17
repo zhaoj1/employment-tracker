@@ -32,7 +32,14 @@ export default class Profile extends Component{
                                 <div className='profile-analytics'>
                                     <div className={this.state.selectedChart? 'chart' : 'chart-hidden'} >
                                         <h1>{this.state.selectedChart}analytics</h1>
-                                        < LineChart jobs={this.props.jobs} interviews={this.props.interviews} meetups={this.props.meetups} algorithms={this.props.algorithms} />
+                                        < LineChart
+                                            jobs={this.props.jobs}
+                                            interviews={this.props.interviews}
+                                            meetups={this.props.meetups}
+                                            algorithms={this.props.algorithms}
+                                            selectedChart={this.state.selectedChart}
+                                            fetchInfo={this.props.fetchInfo}
+                                        />
                                     </div>
                                 </div>
                             </div>
