@@ -83,7 +83,7 @@ export default class App extends React.Component{
 
   setSelectedLineItem = (item) => {
     this.setState({selectedLineItem: item})
-  }||||||||||||||||||||||||||||||||||||||||||||||||\\
+  }
 
   openModal = () => {
     this.setState({modalIsOpen: true});
