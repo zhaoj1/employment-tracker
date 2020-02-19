@@ -44,6 +44,7 @@ export default class MainContainer extends Component{
                             meetups={this.props.meetups}
                             algorithms={this.props.algorithms}
                             fetchInfo={this.props.fetchInfo}
+                            setItemToUpdate={this.props.setItemToUpdate}
                         /> }
                     />
                     <Route exact path='/jobs' 

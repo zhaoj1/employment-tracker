@@ -62,7 +62,11 @@ export default class Profile extends Component{
                                         Upcoming Interviews
                                     </div>
                                     {this.props.interviews.length > 0 ? 
-                                        <UpcomingLineItems items={this.props.interviews.filter(interview => interview.date_of_interview >= today && interview.date_of_interview <= nextWeek)} type='interview' />
+                                        <UpcomingLineItems 
+                                            items={this.props.interviews.filter(interview => interview.date_of_interview >= today && interview.date_of_interview <= nextWeek)} 
+                                            type='interview' 
+                                            setItemToUpdate={this.props.setItemToUpdate} 
+                                        />
                                         :
                                         null
                                     }
@@ -72,7 +76,11 @@ export default class Profile extends Component{
                                         Upcoming Meetups
                                     </div>
                                     {this.props.meetups.length > 0 ?
-                                        <UpcomingLineItems items={this.props.meetups} type='meetup' />
+                                        <UpcomingLineItems 
+                                            items={this.props.meetups} 
+                                            type='meetup' 
+                                            setItemToUpdate={this.props.setItemToUpdate} 
+                                        />
                                         :
                                         null
                                     }

@@ -7,7 +7,7 @@ export default class UpcomingLineItems extends Component{
         return(
             <div className='upcoming-list'>
                 {this.props.items.map(item => {
-                    return <div className='line-item'>
+                    return <div className='line-item' onClick={() => this.props.setItemToUpdate(this.props.item)}>
                         <div className='upcoming-topic'>
                             {item.title}
                         </div>
