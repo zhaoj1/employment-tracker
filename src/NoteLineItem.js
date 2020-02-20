@@ -4,7 +4,7 @@ import './App.css';
 export default class NoteLineItem extends Component{
     render(){
         return(
-            <div className='line-item' >
+            <div className='note-line-item' >
                 <label className='noteLineItemDesc'>{this.props.note.contents}</label>
                 <div className='lineItemBtn' >
                     <button >X</button>

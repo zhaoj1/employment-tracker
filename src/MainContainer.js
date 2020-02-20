@@ -45,6 +45,7 @@ export default class MainContainer extends Component{
                             algorithms={this.props.algorithms}
                             fetchInfo={this.props.fetchInfo}
                             setItemToUpdate={this.props.setItemToUpdate}
+                            setPage={this.props.setPage}
                         /> }
                     />
                     <Route exact path='/jobs' 

@@ -66,6 +66,7 @@ export default class Profile extends Component{
                                             items={this.props.interviews.filter(interview => interview.date_of_interview >= today && interview.date_of_interview <= nextWeek)} 
                                             type='interview' 
                                             setItemToUpdate={this.props.setItemToUpdate} 
+                                            setPage={this.props.setPage}
                                         />
                                         :
                                         null
@@ -80,6 +81,7 @@ export default class Profile extends Component{
                                             items={this.props.meetups} 
                                             type='meetup' 
                                             setItemToUpdate={this.props.setItemToUpdate} 
+                                            setPage={this.props.setPage}
                                         />
                                         :
                                         null

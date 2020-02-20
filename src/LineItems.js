@@ -8,7 +8,7 @@ export default class LineItems extends Component{
             <div className='line-item' onClick={() => this.props.setSelectedLineItem(this.props.item)}>
                 <label className='lineItemDesc'>{this.props.item.title}</label>
                 <div className='lineItemBtn' >
-                    <button onClick={() => this.props.setItemToUpdate(this.props.item)} >Edit</button>
+                    <button className='edit-btn' onClick={() => this.props.setItemToUpdate(this.props.item)} >Edit</button>
                 </div>
             </div>
         )
