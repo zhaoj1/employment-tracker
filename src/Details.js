@@ -50,7 +50,7 @@ export default class Details extends Component{
                 <div className='notes'>
                     <span className='note-title'>Notes</span>
                     {this.props.notes.filter(note => note.page_type == this.props.currentPage && note.page_id == this.props.selectedLineItem.id).map(note => {
-                        return <NoteLineItem note={note} />
+                        return <NoteLineItem note={note} currentUser={this.props.currentUser} fetchInfo={this.props.fetchInfo} />
                     })}
                     <div className='addItemBtn' onClick={() => this.props.openNoteModal(this.props.selectedLineItem)}>+</div>
                 </div>
