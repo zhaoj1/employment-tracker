@@ -11,7 +11,33 @@ import Signup from './Signup'
 import Profile from './Profile'
 import Pages from './Pages'
 
+let dateInfo, d, year, month, day, today, tomorrow, nextWeek
+
 export default class MainContainer extends Component{
+
+    findToday(){
+        d = new Date();
+        year = d.getFullYear();
+        month = d.getMonth() < 10 ? '0' + (d.getMonth()+1) : d.getMonth()+1
+        day = d.getDate()
+        today = year+'-'+month+'-'+day
+        tomorrow = year+'-'+month+'-'+(day+1)
+        nextWeek = year+'-'+month+'-'+(day+7)
+
+        dateInfo={
+            d : d,
+            year : year,
+            month : month,
+            day : day,
+            today : today,
+            tomorrow : tomorrow,
+            nextWeek : nextWeek
+        }
+    }
+
+    componentDidMount(){
+        this.findToday();
+    }
 
     componentDidUpdate(prevProps){
         if(this.props.currentUser && prevProps.currentUser !== this.props.currentUser){
@@ -48,6 +74,7 @@ export default class MainContainer extends Component{
                             setItemToUpdate={this.props.setItemToUpdate}
                             setPage={this.props.setPage}
                             setSelectedLineItem={this.props.setSelectedLineItem}
+                            dateInfo={dateInfo}
                         /> }
                     />
                     <Route exact path='/jobs' 
@@ -88,6 +115,7 @@ export default class MainContainer extends Component{
                             selectedLineItem={this.props.selectedLineItem}
                             setSelectedLineItem={this.props.setSelectedLineItem} 
                             openDeleteModal={this.props.openDeleteModal}
+                            dateInfo={dateInfo}
                         /> }
                     />
                     <Route exact path='/algorithms' 
@@ -128,6 +156,7 @@ export default class MainContainer extends Component{
                             selectedLineItem={this.props.selectedLineItem}
                             setSelectedLineItem={this.props.setSelectedLineItem}
                             openDeleteModal={this.props.openDeleteModal}
+                            dateInfo={dateInfo}
                         /> }
                     />
                     <Route render={() => <Redirect to="/"/>}/>

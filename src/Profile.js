@@ -3,7 +3,7 @@ import './App.css';
 import LineChart from './LineChart'
 import UpcomingLineItems from './UpcomingLineItems'
 
-let d, year, month, day, today, nextWeek
+// let d, year, month, day, today, tomorrow, nextWeek
 
 export default class Profile extends Component{
 
@@ -11,14 +11,15 @@ export default class Profile extends Component{
         selectedChart: null
     }
 
-    findToday(){
-        d = new Date()
-        year = d.getFullYear()
-        month = d.getMonth() < 10 ? '0' + (d.getMonth()+1) : d.getMonth()+1
-        day = d.getDate()
-        today = year+'-'+month+'-'+day
-        nextWeek = year+'-'+month+'-'+(day+7)
-    }
+    // findToday(){
+    //     d = new Date()
+    //     year = d.getFullYear()
+    //     month = d.getMonth() < 10 ? '0' + (d.getMonth()+1) : d.getMonth()+1
+    //     day = d.getDate()
+    //     today = year+'-'+month+'-'+day
+    //     tomorrow = year+'-'+month+'-'+(day+1)
+    //     nextWeek = year+'-'+month+'-'+(day+7)
+    // }
 
     selectChart = (selection) => {
         this.setState({
@@ -26,9 +27,9 @@ export default class Profile extends Component{
         })
     }
 
-    componentDidMount(){
-        this.findToday()
-    }
+    // componentDidMount(){
+    //     this.findToday()
+    // }
 
     render(){
         return(
@@ -48,23 +49,19 @@ export default class Profile extends Component{
                                     <div className={this.state.selectedChart? 'chart' : 'chart-hidden'} >
                                         < LineChart
                                             info={this.state.selectedChart == 'jobs' ? 
-                                                this.props.jobs.filter(job => job.date_of.split('-')[0]==year)
+                                                this.props.jobs.filter(job => job.date_of.split('-')[0]==this.props.dateInfo.year)
                                                 :
                                                 this.state.selectedChart == 'interviews' ?
-                                                    this.props.interviews.filter(interview => interview.date_of.split('-')[0]==year)
+                                                    this.props.interviews.filter(interview => interview.date_of.split('-')[0]==this.props.dateInfo.year)
                                                     :
                                                     this.state.selectedChart == 'meetups' ?
-                                                        this.props.meetups.filter(meetup => meetup.date_of.split('-')[0]==year)
+                                                        this.props.meetups.filter(meetup => meetup.date_of.split('-')[0]==this.props.dateInfo.year)
                                                         :
                                                         this.state.selectedChart == 'algorithms' ?
-                                                            this.props.algorithms.filter(algorithm => algorithm.date_of.split('-')[0]==year) 
+                                                            this.props.algorithms.filter(algorithm => algorithm.date_of.split('-')[0]==this.props.dateInfo.year) 
                                                             :
                                                             []
                                             }
-                                            // jobs={this.props.jobs.filter(job => job.date_of.split('-')[0]==year)}
-                                            // interviews={this.props.interviews.filter(interview => interview.date_of.split('-')[0]==year)}
-                                            // meetups={this.props.meetups.filter(meetup => meetup.date_of.split('-')[0]==year)}
-                                            // algorithms={this.props.algorithms.filter(algorithm => algorithm.date_of.split('-')[0]==year)}
                                             selectedChart={this.state.selectedChart}
                                         />
                                     </div>
@@ -75,13 +72,15 @@ export default class Profile extends Component{
                                     <div className='upcoming-title'>
                                         Upcoming Interviews
                                     </div>
+                                    {console.log(this.props.dateInfo)}
                                     {this.props.interviews.length > 0 ? 
                                         <UpcomingLineItems 
-                                            items={this.props.interviews.filter(interview => interview.date_of >= today && interview.date_of <= nextWeek).filter((i,index) => index < 3)} 
+                                            items={this.props.interviews.filter(interview => interview.date_of >= this.props.dateInfo.today && interview.date_of <= this.props.dateInfo.nextWeek).filter((i,index) => index < 3)} 
                                             setItemToUpdate={this.props.setItemToUpdate} 
                                             setPage={this.props.setPage}
                                             page='/interviews'
                                             setSelectedLineItem={this.props.setSelectedLineItem}
+                                            dateInfo={this.props.dateInfo}
                                         />
                                         :
                                         null
@@ -93,11 +92,12 @@ export default class Profile extends Component{
                                     </div>
                                     {this.props.meetups.length > 0 ?
                                         <UpcomingLineItems 
-                                            items={this.props.meetups.filter(meetup => meetup.date_of >= today && meetup.date_of <= nextWeek).filter((i,index) => index < 3)} 
+                                            items={this.props.meetups.filter(meetup => meetup.date_of >= this.props.dateInfo.today && meetup.date_of <= this.props.dateInfo.nextWeek).filter((i,index) => index < 3)} 
                                             setItemToUpdate={this.props.setItemToUpdate} 
                                             setPage={this.props.setPage}
                                             page='/meetups'
                                             setSelectedLineItem={this.props.setSelectedLineItem}
+                                            dateInfo={this.props.dateInfo}
                                         />
                                         :
                                         null
