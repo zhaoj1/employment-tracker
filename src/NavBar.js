@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 export default class NavBar extends Component{
 
@@ -29,7 +29,7 @@ export default class NavBar extends Component{
                                 <Link to='/algorithms' className='nav-btns' 
                                     onClick={() => this.props.setPage('/algorithms')}
                                 >algorithms</Link>
-                                <Link to='/logout' className='nav-btns'>logout</Link>
+                                <Link to='/logout' className='nav-btns' >logout</Link>
                             </div>
                             :
                             null

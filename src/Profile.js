@@ -64,9 +64,10 @@ export default class Profile extends Component{
                                     {this.props.interviews.length > 0 ? 
                                         <UpcomingLineItems 
                                             items={this.props.interviews.filter(interview => interview.date_of_interview >= today && interview.date_of_interview <= nextWeek)} 
-                                            type='interview' 
                                             setItemToUpdate={this.props.setItemToUpdate} 
                                             setPage={this.props.setPage}
+                                            page='/interviews'
+                                            setSelectedLineItem={this.props.setSelectedLineItem}
                                         />
                                         :
                                         null
@@ -79,9 +80,10 @@ export default class Profile extends Component{
                                     {this.props.meetups.length > 0 ?
                                         <UpcomingLineItems 
                                             items={this.props.meetups} 
-                                            type='meetup' 
                                             setItemToUpdate={this.props.setItemToUpdate} 
                                             setPage={this.props.setPage}
+                                            page='/meetups'
+                                            setSelectedLineItem={this.props.setSelectedLineItem}
                                         />
                                         :
                                         null

@@ -54,7 +54,7 @@ export default class Details extends Component{
                     })}
                     <div className='addItemBtn' onClick={() => this.props.openNoteModal(this.props.selectedLineItem)}>+</div>
                 </div>
-                <button onClick={() => this.props.openDeleteModal(this.props.selectedLineItem)}>DELETE</button>
+                <button className='buttons' onClick={() => this.props.openDeleteModal(this.props.selectedLineItem)}>DELETE</button>
             </>
         )
     }

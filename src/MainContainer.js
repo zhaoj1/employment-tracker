@@ -46,6 +46,7 @@ export default class MainContainer extends Component{
                             fetchInfo={this.props.fetchInfo}
                             setItemToUpdate={this.props.setItemToUpdate}
                             setPage={this.props.setPage}
+                            setSelectedLineItem={this.props.setSelectedLineItem}
                         /> }
                     />
                     <Route exact path='/jobs' 

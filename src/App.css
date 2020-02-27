@@ -96,16 +96,32 @@ html, body, .app, #app>div, #root {
 .upcoming-list{
   display:flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.upcoming-line-item, .upcoming-line-item:active, .upcoming-line-item:visited{
+  border-style: solid;
+  margin: 3px 3px 3px 3px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  text-decoration: none;
+  color:inherit;
+}
+
+.upcoming-line-item:hover{
+  background-color: gray;
 }
 
 .upcoming-topic{
   float: left;
-  margin-left: 5%
+  margin-left: 5%;
 }
 
 .upcoming-date{
   float: right;
-  margin-right: 5%
+  margin-right: 5%;
 }
 
 .chart-hidden{
@@ -214,6 +230,11 @@ html, body, .app, #app>div, #root {
   border-radius:5px;
 }
 
+.buttons:active, .buttons:visited, .buttons:focus{
+  text-decoration: none;
+  outline: none;
+}
+
 .buttons:hover{
   background-color: gray;
 }
@@ -241,7 +262,6 @@ html, body, .app, #app>div, #root {
 }
 
 .addItemBtn:hover{
-  pointer-events: none;
   background-color: gray;
 }
 
