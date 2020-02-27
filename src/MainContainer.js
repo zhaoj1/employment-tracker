@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    Redirect
   } from "react-router-dom";
 import './App.css';
 import Login from './Login'
@@ -129,6 +130,7 @@ export default class MainContainer extends Component{
                             openDeleteModal={this.props.openDeleteModal}
                         /> }
                     />
+                    <Route render={() => <Redirect to="/"/>}/>
                 </Switch>     
             </div>
         )

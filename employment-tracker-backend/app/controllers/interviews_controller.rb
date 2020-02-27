@@ -30,6 +30,7 @@ class InterviewsController < ApplicationController
     def destroy
         interview = Interview.find(params[:id])
         interview.destroy
+        notes = Note.where(page_type: '/interviews', page_id: params[:id]).destroy_all
     end
 
     private

@@ -30,6 +30,7 @@ class AlgorithmsController < ApplicationController
     def destroy
         algorithm = Algorithm.find(params[:id])
         algorithm.destroy
+        notes = Note.where(page_type: '/algorithms', page_id: params[:id]).destroy_all
     end
 
     private

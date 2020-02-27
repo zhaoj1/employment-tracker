@@ -273,11 +273,14 @@ html, body, .app, #app>div, #root {
   border-style: solid;
   text-align: center;
   border-radius: 3px;
+  outline:none;
+
 }
 
 .edit-btn:hover{
   background-color: gray;
-  border-style: solid;
-  text-align: center;
-  border-radius: 3px;
+}
+
+.edit-btn:active, .edit-btn:visited{
+  text-decoration: none;
 }

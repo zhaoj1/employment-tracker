@@ -40,13 +40,6 @@ export default class NewNote extends Component{
             <div>
                 <h1 className='addNewHeader'>Add New Note</h1>
                 <form onSubmit={this.handleSubmit}>
-                    {/* <input
-                        type='text'
-                        name='note'
-                        placeholder='Note'
-                        className='newPageInput'
-                        onChange={this.handleChange}
-                    ></input> */}
                     <textarea 
                         name='note'
                         placeholder='Note'
@@ -54,7 +47,7 @@ export default class NewNote extends Component{
                         onChange={this.handleChange}
                         rows='5'
                     ></textarea>
-                    <input type='submit'></input>
+                    <input className='buttons' type='submit'></input>
                 </form>
             </div>
         )

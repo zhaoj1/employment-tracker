@@ -31,6 +31,7 @@ class JobsController < ApplicationController
     def destroy
         job = Job.find(params[:id])
         job.destroy
+        notes = Note.where(page_type: '/jobs', page_id: params[:id]).destroy_all
     end
 
     private

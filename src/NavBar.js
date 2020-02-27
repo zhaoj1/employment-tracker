@@ -29,7 +29,7 @@ export default class NavBar extends Component{
                                 <Link to='/algorithms' className='nav-btns' 
                                     onClick={() => this.props.setPage('/algorithms')}
                                 >algorithms</Link>
-                                <Link to='/logout' className='nav-btns' >logout</Link>
+                                <Link to='/' className='nav-btns' onClick={()=>this.props.logout()} >logout</Link>
                             </div>
                             :
                             null

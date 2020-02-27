@@ -36,7 +36,7 @@ export default class Signup extends Component{
                         alert(response.errors)
                     } else {
                         this.props.setCurrentUser(response.user)
-                        // this.props.history.push('/profile')
+                        this.props.history.push('/profile')
                     }
             })
         }

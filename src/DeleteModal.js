@@ -16,8 +16,8 @@ export default class DeleteModal extends Component{
         return(
             <div>
                 <div className='addNewHeader'>Are you sure?</div><br></br>
-                <button onClick={this.handleDelete}>Yes</button>
-                <button onClick={this.props.closeModal}>No</button>
+                <button className='buttons' onClick={this.handleDelete}>Yes</button>
+                <button className='buttons' onClick={this.props.closeModal}>No</button>
             </div>
         )
     }

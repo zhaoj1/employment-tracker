@@ -31,6 +31,7 @@ class MeetupsController < ApplicationController
     def destroy
         meetup = Meetup.find(params[:id])
         meetup.destroy
+        notes = Note.where(page_type: '/meetups', page_id: params[:id]).destroy_all
     end
 
     private

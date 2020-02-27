@@ -113,6 +113,7 @@ export default class NewPage extends Component{
                                 placeholder='Title'
                                 className='newPageInput'
                                 onChange={this.handleChange}
+                                required
                             ></input><br></br>
                             <textarea
                                 name='application_info'
@@ -120,6 +121,7 @@ export default class NewPage extends Component{
                                 className='newPageInput'
                                 row='5'
                                 onChange={this.handleChange}
+                                required
                             ></textarea><br></br>
                             <input
                                 type='text'
@@ -127,6 +129,7 @@ export default class NewPage extends Component{
                                 placeholder='Company Name'
                                 className='newPageInput'
                                 onChange={this.handleChange}
+                                required
                             ></input><br></br>
                             <input
                                 type='text'
@@ -134,6 +137,7 @@ export default class NewPage extends Component{
                                 placeholder='Job Title'
                                 className='newPageInput'
                                 onChange={this.handleChange}
+                                required
                             ></input><br></br>
                             <input
                                 type='text'
@@ -141,12 +145,14 @@ export default class NewPage extends Component{
                                 placeholder='Link'
                                 className='newPageInput'
                                 onChange={this.handleChange}
+                                required
                             ></input><br></br>
                             <input
                                 type='date'
                                 name='date_applied'
                                 className='newPageInput'
                                 id='date'
+                                required
                             ></input><br></br>
                             <input type='submit' className='buttons'></input>
                         </>
@@ -159,6 +165,7 @@ export default class NewPage extends Component{
                                     placeholder='Title'
                                     className='newPageInput'
                                     onChange={this.handleChange}
+                                    required
                                 ></input><br></br>
                                 <input
                                     type='text'
@@ -166,6 +173,7 @@ export default class NewPage extends Component{
                                     placeholder='Interviewer'
                                     className='newPageInput'
                                     onChange={this.handleChange}
+                                    required
                                 ></input><br></br>
                                 <input
                                     type='text'
@@ -173,6 +181,7 @@ export default class NewPage extends Component{
                                     placeholder='Company Name'
                                     className='newPageInput'
                                     onChange={this.handleChange}
+                                    required
                                 ></input><br></br>
                                 <input
                                     type='text'
@@ -180,6 +189,7 @@ export default class NewPage extends Component{
                                     placeholder='Job Title'
                                     className='newPageInput'
                                     onChange={this.handleChange}
+                                    required
                                 ></input><br></br>
                                 <input
                                     type='text'
@@ -187,12 +197,14 @@ export default class NewPage extends Component{
                                     placeholder='Link'
                                     className='newPageInput'
                                     onChange={this.handleChange}
+                                    required
                                 ></input><br></br>
                                 <input
                                     type='date'
                                     name='date_of_interview'
                                     className='newPageInput'
                                     id='date'
+                                    required
                                 ></input><br></br>
                                 <input type='submit' className='buttons' ></input>
                             </>
@@ -205,12 +217,14 @@ export default class NewPage extends Component{
                                         placeholder='Title'
                                         className='newPageInput'
                                         onChange={this.handleChange}
+                                        required
                                     ></input><br></br>
                                     <input
                                         type='date'
                                         name='date_completed'
                                         className='newPageInput'
                                         id='date'
+                                        required
                                     ></input><br></br>
                                     <input type='submit' className='buttons' ></input>
                                 </>
@@ -223,6 +237,7 @@ export default class NewPage extends Component{
                                             placeholder='Title'
                                             className='newPageInput'
                                             onChange={this.handleChange}
+                                            required
                                         ></input><br></br>
                                         <input
                                             type='text'
@@ -230,6 +245,7 @@ export default class NewPage extends Component{
                                             placeholder='Location'
                                             className='newPageInput'
                                             onChange={this.handleChange}
+                                            required
                                         ></input><br></br>
                                         <input
                                             type='text'
@@ -237,12 +253,14 @@ export default class NewPage extends Component{
                                             placeholder='Link'
                                             className='newPageInput'
                                             onChange={this.handleChange}
+                                            required
                                         ></input><br></br>
                                         <input
                                             type='date'
                                             name='date_of_meetup'
                                             className='newPageInput'
                                             id='date'
+                                            required
                                         >
                                         </input><br></br>
                                         <input type='submit' className='buttons' ></input>

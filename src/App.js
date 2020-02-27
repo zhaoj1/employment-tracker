@@ -25,6 +25,20 @@ const customStyles = {
   }
 };
 
+const initialState = {
+  currentUser: null,
+  currentPage: null,
+  modalIsOpen: false,
+  itemToUpdate: null,
+  updateNote: false,
+  deleteItem: false,
+  selectedLineItem: null,
+  jobs: [],
+  interviews: [],
+  meetups: [],
+  algorithms: []
+};
+
 Modal.setAppElement('#root');
 
 export default class App extends React.Component{
@@ -33,19 +47,7 @@ export default class App extends React.Component{
 
     super();
 
-    this.state={
-      currentUser: null,
-      currentPage: null,
-      modalIsOpen: false,
-      itemToUpdate: null,
-      updateNote: false,
-      deleteItem: false,
-      selectedLineItem: null,
-      jobs: [],
-      interviews: [],
-      meetups: [],
-      algorithms: []
-    };
+    this.state=initialState;
 
     this.openModal = this.openModal.bind(this);
     this.openNoteModal = this.openNoteModal.bind(this);
@@ -59,6 +61,12 @@ export default class App extends React.Component{
     this.fetchNotes = this.fetchNotes.bind(this);
     this.setItemToUpdate = this.setItemToUpdate.bind(this);
     this.setSelectedLineItem = this.setSelectedLineItem.bind(this);
+    this.logout = this.logout.bind(this);
+  }
+
+  logout = () => {
+    this.setState(initialState);
+    alert('Successfully logged out.')
   }
 
   setCurrentUser = (user) => {
@@ -116,7 +124,7 @@ export default class App extends React.Component{
     .then(res => res.json())
     .then(response => {
         this.setState({
-            jobs: [...response]
+            jobs: [...response.sort((a,b) => (a.date_applied > b.date_applied) ? 1 : ((b.date_applied > a.date_applied) ? -1 : 0))]
         })
     })
   }
@@ -126,7 +134,7 @@ export default class App extends React.Component{
     .then(res => res.json())
     .then(response => {
         this.setState({
-            interviews: [...response]
+            interviews: [...response.sort((a,b) => (a.date_of_interview > b.date_of_interview) ? 1 : ((b.date_of_interview > a.date_of_interview) ? -1 : 0))]
         })
     })
   }
@@ -136,7 +144,7 @@ export default class App extends React.Component{
     .then(res => res.json())
     .then(response => {
         this.setState({
-            meetups: [...response]
+            meetups: [...response.sort((a,b) => (a.date_of_meetup > b.date_of_meetup) ? 1 : ((b.date_of_meetup > a.date_of_meetup) ? -1 : 0))]
         })
     })
   }
@@ -146,7 +154,7 @@ export default class App extends React.Component{
     .then(res => res.json())
     .then(response => {
         this.setState({
-            algorithms: [...response]
+            algorithms: [...response.sort((a,b) => (a.date_completed > b.date_completed) ? 1 : ((b.date_completed > a.date_completed) ? -1 : 0))]
         })
     })
   }
@@ -176,6 +184,7 @@ export default class App extends React.Component{
           <NavBar 
             currentUser={this.state.currentUser} 
             setPage={this.setPage}
+            logout={this.logout}
           />
           <MainContainer 
             currentUser={this.state.currentUser} 
