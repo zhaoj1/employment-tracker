@@ -19,7 +19,7 @@ export default class Details extends Component{
                         <div className='detail-line-item'>{this.props.selectedLineItem.company_name}</div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.job_title}</div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.link}</div>
-                        <div className='detail-line-item'>{this.props.selectedLineItem.date_applied}</div>
+                        <div className='detail-line-item'>{this.props.selectedLineItem.date_of}</div>
                     </div>
                 :
                 this.props.page === 'interviews' ?
@@ -29,13 +29,13 @@ export default class Details extends Component{
                         <div className='detail-line-item'>{this.props.selectedLineItem.company_name}</div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.job_title}</div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.link}</div>
-                        <div className='detail-line-item'>{this.props.selectedLineItem.date_of_interview}</div>
+                        <div className='detail-line-item'>{this.props.selectedLineItem.date_of}</div>
                     </div>
                 :
                 this.props.page === 'algorithms' ?
                     <div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.title}</div>
-                        <div className='detail-line-item'>{this.props.selectedLineItem.date_completed}</div>
+                        <div className='detail-line-item'>{this.props.selectedLineItem.date_of}</div>
                     </div>
                 :
                 this.props.page === 'meetups' ?
@@ -43,7 +43,7 @@ export default class Details extends Component{
                         <div className='detail-line-item'>{this.props.selectedLineItem.title}</div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.location}</div>
                         <div className='detail-line-item'>{this.props.selectedLineItem.link}</div>
-                        <div className='detail-line-item'>{this.props.selectedLineItem.date_of_meetup}</div>
+                        <div className='detail-line-item'>{this.props.selectedLineItem.date_of}</div>
                     </div>
                 : null
                 }

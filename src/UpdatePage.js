@@ -11,10 +11,7 @@ export default class UpdatePage extends Component{
         company_name: '',
         job_title: '',
         link: '',
-        date_applied: null,
-        date_of_interview: null,
-        date_completed: null,
-        date_of_meetup: null
+        date_of: null,
     }
 
     componentDidMount(){
@@ -25,7 +22,7 @@ export default class UpdatePage extends Component{
                 company_name: this.props.itemToUpdate.company_name,
                 job_title: this.props.itemToUpdate.job_title,
                 link: this.props.itemToUpdate.link,
-                date_applied: this.props.itemToUpdate.date_applied
+                date_of: this.props.itemToUpdate.date_of
             })
         } else if(this.props.currentPage == '/interviews'){
             this.setState({
@@ -34,19 +31,19 @@ export default class UpdatePage extends Component{
                 company_name: this.props.itemToUpdate.company_name,
                 job_title: this.props.itemToUpdate.job_title,
                 link: this.props.itemToUpdate.link,
-                date_of_interview: this.props.itemToUpdate.date_of_interview
+                date_of: this.props.itemToUpdate.date_of
             })
         } else if(this.props.currentPage == '/algorithms'){
             this.setState({
                 title: this.props.itemToUpdate.title,
-                date_completed: this.props.itemToUpdate.date_completed
+                date_of: this.props.itemToUpdate.date_of
             })
         } else if(this.props.currentPage == '/meetups'){
             this.setState({
                 title: this.props.itemToUpdate.title,
                 location: this.props.itemToUpdate.location,
                 link: this.props.itemToUpdate.link,
-                date_of_meetup: this.props.itemToUpdate.date_of_meetup
+                date_of: this.props.itemToUpdate.date_of
             })  
         }
     }
@@ -72,7 +69,7 @@ export default class UpdatePage extends Component{
                     company_name: this.state.company_name,
                     job_title: this.state.job_title,
                     link: this.state.link,
-                    date_applied: document.getElementById('date').value,
+                    date_of: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -92,7 +89,7 @@ export default class UpdatePage extends Component{
                     company_name: this.state.company_name,
                     job_title: this.state.job_title,
                     link: this.state.link,
-                    date_of_interview: document.getElementById('date').value,
+                    date_of: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -108,7 +105,7 @@ export default class UpdatePage extends Component{
                 },
                 body: JSON.stringify({
                     title: this.state.title,
-                    date_completed: document.getElementById('date').value,
+                    date_of: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -126,7 +123,7 @@ export default class UpdatePage extends Component{
                     title: this.state.title,
                     location: this.state.location,
                     link: this.state.link,
-                    date_of_meetup: document.getElementById('date').value,
+                    date_of: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -191,9 +188,9 @@ export default class UpdatePage extends Component{
                             </input><br></br>
                             <input
                                 type='date'
-                                name='date_applied'
+                                name='date_of'
                                 className='newPageInput'
-                                value={this.state.date_applied}
+                                value={this.state.date_of}
                                 onChange={this.handleChange}
                                 id='date'
                             >
@@ -249,10 +246,10 @@ export default class UpdatePage extends Component{
                                 ></input><br></br>
                                 <input
                                     type='date'
-                                    name='date_of_interview'
+                                    name='date_of'
                                     className='newPageInput'
                                     id='date'
-                                    value={this.state.date_of_interview}
+                                    value={this.state.date_of}
                                     onChange={this.handleChange}
                                 >
                                 </input><br></br>
@@ -272,10 +269,10 @@ export default class UpdatePage extends Component{
                                     </input><br></br>
                                     <input
                                         type='date'
-                                        name='date_completed'
+                                        name='date_of'
                                         className='newPageInput'
                                         id='date'
-                                        value={this.state.date_completed}
+                                        value={this.state.date_of}
                                         onChange={this.handleChange}
                                     >
                                     </input><br></br>
@@ -310,10 +307,10 @@ export default class UpdatePage extends Component{
                                         ></input><br></br>
                                         <input
                                             type='date'
-                                            name='date_of_meetup'
+                                            name='date_of'
                                             className='newPageInput'
                                             id='date'
-                                            value={this.state.date_of_meetup}
+                                            value={this.state.date_of}
                                             onChange={this.handleChange}
                                         >
                                         </input><br></br>

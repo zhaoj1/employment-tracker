@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_203314) do
 
   create_table "algorithms", force: :cascade do |t|
     t.string "title"
-    t.date "date_completed"
+    t.date "date_of"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_203314) do
     t.string "job_title"
     t.string "interviewer"
     t.string "link"
-    t.date "date_of_interview"
+    t.date "date_of"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_203314) do
     t.string "company_name"
     t.string "job_title"
     t.string "link"
-    t.date "date_applied"
+    t.date "date_of"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_203314) do
   create_table "meetups", force: :cascade do |t|
     t.string "title"
     t.string "location"
-    t.date "date_of_meetup"
+    t.date "date_of"
     t.string "link"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false

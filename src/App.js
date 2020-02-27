@@ -124,7 +124,7 @@ export default class App extends React.Component{
     .then(res => res.json())
     .then(response => {
         this.setState({
-            jobs: [...response.sort((a,b) => (a.date_applied > b.date_applied) ? 1 : ((b.date_applied > a.date_applied) ? -1 : 0))]
+            jobs: [...response.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
         })
     })
   }
@@ -134,7 +134,7 @@ export default class App extends React.Component{
     .then(res => res.json())
     .then(response => {
         this.setState({
-            interviews: [...response.sort((a,b) => (a.date_of_interview > b.date_of_interview) ? 1 : ((b.date_of_interview > a.date_of_interview) ? -1 : 0))]
+            interviews: [...response.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
         })
     })
   }
@@ -144,7 +144,7 @@ export default class App extends React.Component{
     .then(res => res.json())
     .then(response => {
         this.setState({
-            meetups: [...response.sort((a,b) => (a.date_of_meetup > b.date_of_meetup) ? 1 : ((b.date_of_meetup > a.date_of_meetup) ? -1 : 0))]
+            meetups: [...response.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
         })
     })
   }
@@ -154,7 +154,7 @@ export default class App extends React.Component{
     .then(res => res.json())
     .then(response => {
         this.setState({
-            algorithms: [...response.sort((a,b) => (a.date_completed > b.date_completed) ? 1 : ((b.date_completed > a.date_completed) ? -1 : 0))]
+            algorithms: [...response.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
         })
     })
   }

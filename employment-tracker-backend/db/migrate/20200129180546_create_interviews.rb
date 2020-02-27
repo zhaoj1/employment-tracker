@@ -6,7 +6,7 @@ class CreateInterviews < ActiveRecord::Migration[6.0]
       t.string :job_title
       t.string :interviewer
       t.string :link
-      t.date :date_of_interview
+      t.date :date_of
       t.integer :user_id
 
       t.timestamps

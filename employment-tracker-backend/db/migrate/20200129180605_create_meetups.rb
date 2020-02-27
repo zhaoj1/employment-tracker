@@ -3,7 +3,7 @@ class CreateMeetups < ActiveRecord::Migration[6.0]
     create_table :meetups do |t|
       t.string :title
       t.string :location
-      t.date :date_of_meetup
+      t.date :date_of
       t.string :link
       t.integer :user_id
 

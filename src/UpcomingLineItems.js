@@ -19,10 +19,10 @@ export default class UpcomingLineItems extends Component{
                         </div>
                         <div className='upcoming-date'>
                             {this.props.page == '/interviews' ? 
-                                item.date_of_interview
+                                item.date_of
                                 :
                                 this.props.page == '/meetups' ? 
-                                    item.date_of_meetup
+                                    item.date_of
                                     :
                                     null
                             }

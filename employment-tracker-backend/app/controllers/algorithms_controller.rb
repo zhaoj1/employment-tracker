@@ -36,7 +36,7 @@ class AlgorithmsController < ApplicationController
     private
 
         def algorithmParams
-            params.require(:algorithm).permit(:title, :date_completed, :user_id)
+            params.require(:algorithm).permit(:title, :date_of, :user_id)
         end
 
 end

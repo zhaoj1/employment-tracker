@@ -7,7 +7,7 @@ class User < ApplicationRecord
     has_many :notes
 
     validates :username, uniqueness: true, presence: true
-    # validates :password, presence: true, length: { in: 6..20 }
+    validates :password, presence: true, length: { in: 6..20 }
 
     has_secure_password
 

@@ -35,7 +35,7 @@ export default class NewPage extends Component{
                     company_name: this.state.company_name,
                     job_title: this.state.job_title,
                     link: this.state.link,
-                    date_applied: document.getElementById('date').value,
+                    date_of: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -55,7 +55,7 @@ export default class NewPage extends Component{
                     company_name: this.state.company_name,
                     job_title: this.state.job_title,
                     link: this.state.link,
-                    date_of_interview: document.getElementById('date').value,
+                    date_of: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -71,7 +71,7 @@ export default class NewPage extends Component{
                 },
                 body: JSON.stringify({
                     title: this.state.title,
-                    date_completed: document.getElementById('date').value,
+                    date_of: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -89,7 +89,7 @@ export default class NewPage extends Component{
                     title: this.state.title,
                     location: this.state.location,
                     link: this.state.link,
-                    date_of_meetup: document.getElementById('date').value,
+                    date_of: document.getElementById('date').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -149,7 +149,7 @@ export default class NewPage extends Component{
                             ></input><br></br>
                             <input
                                 type='date'
-                                name='date_applied'
+                                name='date_of'
                                 className='newPageInput'
                                 id='date'
                                 required
@@ -201,7 +201,7 @@ export default class NewPage extends Component{
                                 ></input><br></br>
                                 <input
                                     type='date'
-                                    name='date_of_interview'
+                                    name='date_of'
                                     className='newPageInput'
                                     id='date'
                                     required
@@ -221,7 +221,7 @@ export default class NewPage extends Component{
                                     ></input><br></br>
                                     <input
                                         type='date'
-                                        name='date_completed'
+                                        name='date_of'
                                         className='newPageInput'
                                         id='date'
                                         required
@@ -257,7 +257,7 @@ export default class NewPage extends Component{
                                         ></input><br></br>
                                         <input
                                             type='date'
-                                            name='date_of_meetup'
+                                            name='date_of'
                                             className='newPageInput'
                                             id='date'
                                             required
