@@ -31,7 +31,8 @@ export default class UpdatePage extends Component{
                 company_name: this.props.itemToUpdate.company_name,
                 job_title: this.props.itemToUpdate.job_title,
                 link: this.props.itemToUpdate.link,
-                date_of: this.props.itemToUpdate.date_of
+                date_of: this.props.itemToUpdate.date_of,
+                time_of: this.props.itemToUpdate.time_of.split('T')[1].slice(0,5)
             })
         } else if(this.props.currentPage == '/algorithms'){
             this.setState({
@@ -43,7 +44,8 @@ export default class UpdatePage extends Component{
                 title: this.props.itemToUpdate.title,
                 location: this.props.itemToUpdate.location,
                 link: this.props.itemToUpdate.link,
-                date_of: this.props.itemToUpdate.date_of
+                date_of: this.props.itemToUpdate.date_of,
+                time_of: this.props.itemToUpdate.time_of.split('T')[1].slice(0,5)
             })  
         }
     }
@@ -90,6 +92,7 @@ export default class UpdatePage extends Component{
                     job_title: this.state.job_title,
                     link: this.state.link,
                     date_of: document.getElementById('date').value,
+                    time_of: document.getElementById('time').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -124,6 +127,7 @@ export default class UpdatePage extends Component{
                     location: this.state.location,
                     link: this.state.link,
                     date_of: document.getElementById('date').value,
+                    time_of: document.getElementById('time').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -253,6 +257,15 @@ export default class UpdatePage extends Component{
                                     onChange={this.handleChange}
                                 >
                                 </input><br></br>
+                                <input
+                                    type='time'
+                                    name='time_of'
+                                    className='newPageInput'
+                                    value={this.state.time_of}
+                                    onChange={this.handleChange}
+                                    id='time'
+                                    required
+                                ></input><br></br>
                                 <input type='submit' className='buttons' ></input>
                             </>
                             :
@@ -314,6 +327,15 @@ export default class UpdatePage extends Component{
                                             onChange={this.handleChange}
                                         >
                                         </input><br></br>
+                                        <input
+                                            type='time'
+                                            name='time_of'
+                                            className='newPageInput'
+                                            value={this.state.time_of}
+                                            onChange={this.handleChange}
+                                            id='time'
+                                            required
+                                        ></input><br></br>
                                         <input type='submit' className='buttons' ></input>
                                     </>
                                     :

@@ -56,6 +56,7 @@ export default class NewPage extends Component{
                     job_title: this.state.job_title,
                     link: this.state.link,
                     date_of: document.getElementById('date').value,
+                    time_of: document.getElementById('time').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -90,6 +91,7 @@ export default class NewPage extends Component{
                     location: this.state.location,
                     link: this.state.link,
                     date_of: document.getElementById('date').value,
+                    time_of: document.getElementById('time').value,
                     user_id: this.props.currentUser.id
                 })
             })
@@ -206,6 +208,13 @@ export default class NewPage extends Component{
                                     id='date'
                                     required
                                 ></input><br></br>
+                                <input
+                                    type='time'
+                                    name='time_of'
+                                    className='newPageInput'
+                                    id='time'
+                                    required
+                                ></input><br></br>
                                 <input type='submit' className='buttons' ></input>
                             </>
                             :
@@ -261,8 +270,14 @@ export default class NewPage extends Component{
                                             className='newPageInput'
                                             id='date'
                                             required
-                                        >
-                                        </input><br></br>
+                                        ></input><br></br>
+                                        <input
+                                            type='time'
+                                            name='time_of'
+                                            className='newPageInput'
+                                            id='time'
+                                            required
+                                        ></input><br></br>
                                         <input type='submit' className='buttons' ></input>
                                     </>
                                     :

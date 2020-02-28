@@ -91,6 +91,7 @@ html, body, .app, #app>div, #root {
   background-color: black;
   color:white;
   padding: 10px 0 10px 0;
+  font-weight: bold;
 }
 
 .upcoming-list{
@@ -186,10 +187,24 @@ html, body, .app, #app>div, #root {
 }
 
 .detail-line-item{
-  border-style: solid;
+  /* border-style: solid; */
   margin: 3px 3px 3px 3px;
   padding: 5px;
   text-align: left;
+  display: flex;
+  /* justify-content: flex-start; */
+  justify-content: space-between;
+}
+
+.detail-label{
+  float: left;
+  width: 35%;
+}
+
+.detail-info{
+  float: right;
+  width: 60%;
+  height:auto;
 }
 
 .notes{

@@ -16,20 +16,20 @@ export default class NavBar extends Component{
                             <div>
                                 <Link to='/profile' className='nav-btns' 
                                     onClick={() => this.props.setPage('/profile')}
-                                >profile</Link>
+                                >Profile</Link>
                                 <Link to='/jobs' className='nav-btns' 
                                     onClick={() => this.props.setPage('/jobs')}
-                                >jobs</Link>
+                                >Jobs</Link>
                                 <Link to='/interviews' className='nav-btns' 
                                     onClick={() => this.props.setPage('/interviews')}
-                                >interviews</Link>
+                                >Interviews</Link>
                                 <Link to='/meetups' className='nav-btns' 
                                     onClick={() => this.props.setPage('/meetups')}
-                                >meetups</Link>
+                                >Meetups</Link>
                                 <Link to='/algorithms' className='nav-btns' 
                                     onClick={() => this.props.setPage('/algorithms')}
-                                >algorithms</Link>
-                                <Link to='/' className='nav-btns' onClick={()=>this.props.logout()} >logout</Link>
+                                >Algorithms</Link>
+                                <Link to='/' className='nav-btns' onClick={()=>this.props.logout()} >Logout</Link>
                             </div>
                             :
                             null

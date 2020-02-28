@@ -3,7 +3,6 @@ import './App.css';
 import LineChart from './LineChart'
 import UpcomingLineItems from './UpcomingLineItems'
 
-// let d, year, month, day, today, tomorrow, nextWeek
 
 export default class Profile extends Component{
 
@@ -11,25 +10,11 @@ export default class Profile extends Component{
         selectedChart: null
     }
 
-    // findToday(){
-    //     d = new Date()
-    //     year = d.getFullYear()
-    //     month = d.getMonth() < 10 ? '0' + (d.getMonth()+1) : d.getMonth()+1
-    //     day = d.getDate()
-    //     today = year+'-'+month+'-'+day
-    //     tomorrow = year+'-'+month+'-'+(day+1)
-    //     nextWeek = year+'-'+month+'-'+(day+7)
-    // }
-
     selectChart = (selection) => {
         this.setState({
             selectedChart: selection
         })
     }
-
-    // componentDidMount(){
-    //     this.findToday()
-    // }
 
     render(){
         return(

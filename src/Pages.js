@@ -12,10 +12,10 @@ export default class Pages extends Component{
                         this.props.history.push('/')
                         :
                         <>
-                            <div className='page-title'>{this.props.page}</div>
+                            <div className='page-title'>{this.props.page.toUpperCase()}</div>
                             <div className='page-contents'>
                                 <div className='page-left'>
-                                    {this.props.userSaved === [] ?
+                                    {this.props.userSaved.length == 0 ?
                                         null
                                         :
                                         this.props.userSaved.map(ele => {

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_203314) do
     t.string "interviewer"
     t.string "link"
     t.date "date_of"
+    t.time "time_of"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_203314) do
     t.string "title"
     t.string "location"
     t.date "date_of"
+    t.time "time_of"
     t.string "link"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
