@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Link} from 'react';
 import './App.css';
 import NoteLineItem from './NoteLineItem'
 
@@ -70,7 +70,7 @@ export default class Details extends Component{
                                 Link:
                             </div>
                             <div className='detail-info'>
-                                {this.props.selectedLineItem.link}
+                                <a href={this.props.selectedLineItem.link} target='blank' >{this.props.selectedLineItem.link}</a>
                             </div>
                         </div>
                         <div className='detail-line-item'>
@@ -117,7 +117,7 @@ export default class Details extends Component{
                                 Link:
                             </div>
                             <div className='detail-info'>
-                                {this.props.selectedLineItem.link}
+                                <a href={this.props.selectedLineItem.link} target='blank' >{this.props.selectedLineItem.link}</a>
                             </div>
                         </div>
                         <div className='detail-line-item'>
@@ -171,7 +171,7 @@ export default class Details extends Component{
                                 Link:
                             </div>
                             <div className='detail-info'>
-                                {this.props.selectedLineItem.link}
+                                <a href={this.props.selectedLineItem.link} target='blank' >{this.props.selectedLineItem.link}</a>
                             </div>
                         </div>
                         <div className='detail-line-item'>
@@ -198,7 +198,7 @@ export default class Details extends Component{
                     {this.props.notes.filter(note => note.page_type == this.props.currentPage && note.page_id == this.props.selectedLineItem.id).map(note => {
                         return <NoteLineItem note={note} currentUser={this.props.currentUser} fetchInfo={this.props.fetchInfo} />
                     })}
-                    <div className='addItemBtn' onClick={() => this.props.openNoteModal(this.props.selectedLineItem)}>+</div>
+                    <div className='detailsAddItemBtn' onClick={() => this.props.openNoteModal(this.props.selectedLineItem)}>+</div>
                 </div>
                 <button className='buttons' onClick={() => this.props.openDeleteModal(this.props.selectedLineItem)}>DELETE</button>
             </>

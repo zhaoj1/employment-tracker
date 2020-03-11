@@ -15,6 +15,15 @@ let dateInfo, d, year, month, day, today, tomorrow, nextWeek
 
 export default class MainContainer extends Component{
 
+    constructor(){
+        super();
+        this.state = {
+            error: ''
+        }
+        this.setError = this.setError.bind(this)
+        this.clearError = this.clearError.bind(this)
+    }
+
     findToday(){
         d = new Date();
         year = d.getFullYear();
@@ -45,6 +54,14 @@ export default class MainContainer extends Component{
         }
     }
 
+    setError = (error) => {
+        this.setState({error: error})
+    }
+
+    clearError = () => {
+        this.setState({error: ''})
+    }
+
     render(){
         return(
             <div className='main-container'>
@@ -54,12 +71,18 @@ export default class MainContainer extends Component{
                             setCurrentUser={this.props.setCurrentUser} 
                             currentUser={this.props.currentUser}
                             fetchInfo={this.props.fetchInfo}
+                            setError={this.setError}
+                            clearError={this.clearError}
+                            error={this.state.error}
                         /> }
                     />
                     <Route exact path='/signup' 
                         render={(routerProps) => <Signup {...routerProps} 
                             setCurrentUser={this.props.setCurrentUser} 
                             currentUser={this.props.currentUser}
+                            setError={this.setError}
+                            clearError={this.clearError}
+                            error={this.state.error}
                         /> }
                     />
                     <Route exact path='/profile' 

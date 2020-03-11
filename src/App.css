@@ -12,7 +12,7 @@ html, body, .app, #app>div, #root {
   top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: rgb(200,200,200);
+  background-color: rgb(80,120,150);
   height: 50px;
   font-size:25px;
 }
@@ -21,9 +21,10 @@ html, body, .app, #app>div, #root {
   margin-top:0.5%;
 }
 
-.title {
+.title, .title:active, .title:visited {
   float: left;
   margin-left:1%;
+  text-decoration: none;
 }
 
 .nav-btns-container {
@@ -33,12 +34,15 @@ html, body, .app, #app>div, #root {
 
 .nav-btns, .nav-btns:active, .nav-btns:visited{
   margin-right:3%;
-  color: inherit;
+  color: rgb(240,240,240);
   text-decoration: none;
 }
 
+.nav-btns:hover{
+  color: rgb(50,50,150);
+}
+
 .main-container {
-  /* margin-top: 60px; */
   height: 100%;
 }
 
@@ -60,6 +64,7 @@ html, body, .app, #app>div, #root {
   padding-bottom: 20px;
   display:flex;
   flex-direction: column;
+  border-radius: 10px;
 }
 
 .profile-analytics-container {
@@ -69,6 +74,7 @@ html, body, .app, #app>div, #root {
   padding: 20px 10px 20px 10px;
   float: left;
   width: 50%;
+  border-radius: 5px;
 }
 
 .to-do{
@@ -78,17 +84,20 @@ html, body, .app, #app>div, #root {
   margin: 0 15px 0 0;
   padding: 10px 0 10px 0;
   width: 38%;
+  border-radius: 5px;
 }
 
 .upcoming{
   border-style: solid;
+  border-color:rgb(50,50,150);
   margin: 0 15px 10px 15px;
+  border-radius: 5px;
 }
 
 .upcoming-title{
   border-style: solid;
-  border-color:black;
-  background-color: black;
+  border-color:rgb(50,50,150);;
+  background-color: rgb(50,50,150);
   color:white;
   padding: 10px 0 10px 0;
   font-weight: bold;
@@ -109,6 +118,7 @@ html, body, .app, #app>div, #root {
   background-color: white;
   text-decoration: none;
   color:inherit;
+  border-radius: 5px;
 }
 
 .upcoming-line-item:hover{
@@ -141,6 +151,7 @@ html, body, .app, #app>div, #root {
   margin: auto;
   margin-top:10%;
   text-align:center;
+  border-radius: 10px;
 }
 
 .page-contents{
@@ -155,6 +166,7 @@ html, body, .app, #app>div, #root {
   margin-top:2%;
   margin-bottom:2%;
   padding: 3px;
+  border-radius: 5px;
 }
 
 .page-right{
@@ -165,6 +177,7 @@ html, body, .app, #app>div, #root {
   margin-bottom:2%;
   padding: 3px;
   display: block;
+  border-radius: 5px;
 }
 
 .page-title{
@@ -180,20 +193,22 @@ html, body, .app, #app>div, #root {
   display: flex;
   justify-content: space-between;
   background-color: white;
+  border-radius: 5px;
 }
 
 .line-item:hover{
-  background-color: gray;
+  background-color: rgb(50,50,150);
+  color: white;
+  border-color:black;
 }
 
 .detail-line-item{
-  /* border-style: solid; */
   margin: 3px 3px 3px 3px;
   padding: 5px;
   text-align: left;
   display: flex;
-  /* justify-content: flex-start; */
   justify-content: space-between;
+  border-radius: 5px;
 }
 
 .detail-label{
@@ -209,9 +224,11 @@ html, body, .app, #app>div, #root {
 
 .notes{
   border-style: solid;
+  border-color :rgb(50,50,150);
   margin: 3px 3px 3px 3px;
   padding-top: 3px;
-  background-color: black;
+  background-color: rgb(50,50,150);
+  border-radius: 5px;
 }
 
 .note-line-item{
@@ -221,6 +238,8 @@ html, body, .app, #app>div, #root {
   display: flex;
   justify-content: space-between;
   background-color: white;
+  border-radius: 5px;
+  border-color:rgb(50,50,150); 
 }
 
 .noteLineItemDesc{
@@ -251,7 +270,8 @@ html, body, .app, #app>div, #root {
 }
 
 .buttons:hover{
-  background-color: gray;
+  background-color: rgb(50,50,150);
+  color:white;
 }
 
 .input{
@@ -261,23 +281,34 @@ html, body, .app, #app>div, #root {
 
 .lineItemBtn{
   float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .lineItemDesc{
   float: right;
 }
 
-.addItemBtn{
+.addItemBtn, .detailsAddItemBtn{
   margin: auto;
   border-style: solid;
   margin: 3px 3px 3px 3px;
   text-align: center;
   padding: 5px;
   background-color: white;
+  border-radius: 5px;
+  font-weight:bold
 }
 
 .addItemBtn:hover{
-  background-color: gray;
+  background-color: rgb(50,50,150);
+  color:White;
+  border-color: black
+} 
+
+.detailsAddItemBtn:hover{
+  
 }
 
 .plus{
@@ -298,4 +329,9 @@ html, body, .app, #app>div, #root {
 
 .edit-btn:active, .edit-btn:visited{
   text-decoration: none;
+}
+
+.error{
+  font-weight: bold;
+  color: red;
 }

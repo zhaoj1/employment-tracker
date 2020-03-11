@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 import './App.css';
 
 export default class Signup extends Component{
@@ -7,6 +8,10 @@ export default class Signup extends Component{
         username: '',
         password: '',
         passwordConfirm: ''
+    }
+
+    componentDidMount(){
+        this.props.clearError();
     }
 
     handleChange = (event) => {
@@ -33,15 +38,16 @@ export default class Signup extends Component{
             .then(res => res.json())
                 .then(response => {
                     if (response.errors){
-                        alert(response.errors)
+                        this.props.setError('Username has already been taken.')
                     } else {
+                        this.props.clearError()
                         this.props.setCurrentUser(response.user)
                         this.props.history.push('/profile')
                     }
             })
         }
         else{
-            alert('Passwords must match.')
+            this.props.setError('Passwords must match.')
         }
     }
 
@@ -77,7 +83,15 @@ export default class Signup extends Component{
                             required 
                             className='input'
                         /><br></br>
-                        <input type='submit' value='Create New Account' className='buttons' />
+                        <input type='submit' value='Create' className='buttons' /><br></br>
+                        <Link to='/'><input type='button' value='Back' className='buttons' /></Link><br></br>
+                        {this.props.error == '' ?
+                            null
+                            :
+                            <>
+                                <label className='error'>{this.props.error}</label>
+                            </>
+                        }
                     </form>
                 </div>
             </div>

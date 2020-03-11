@@ -142,12 +142,11 @@ export default class NewPage extends Component{
                                 required
                             ></input><br></br>
                             <input
-                                type='text'
+                                type='url'
                                 name='link'
-                                placeholder='Link'
+                                placeholder='https://www.example.com'
                                 className='newPageInput'
                                 onChange={this.handleChange}
-                                required
                             ></input><br></br>
                             <input
                                 type='date'
@@ -194,7 +193,7 @@ export default class NewPage extends Component{
                                     required
                                 ></input><br></br>
                                 <input
-                                    type='text'
+                                    type='url'
                                     name='link'
                                     placeholder='Link'
                                     className='newPageInput'
@@ -257,7 +256,7 @@ export default class NewPage extends Component{
                                             required
                                         ></input><br></br>
                                         <input
-                                            type='text'
+                                            type='url'
                                             name='link'
                                             placeholder='Link'
                                             className='newPageInput'

@@ -9,6 +9,10 @@ export default class Login extends Component{
         password: ''
     }
 
+    componentDidMount(){
+        this.props.clearError()
+    }
+
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -29,10 +33,11 @@ export default class Login extends Component{
         .then(res => res.json())
         .then(response => {
             if (response.errors){
-                alert('Username or Password incorrect')
+                this.props.setError('Username or Password incorrect.');
             } else {
-                this.props.setCurrentUser(response.user)
-                this.props.history.push('/profile')
+                this.props.setCurrentUser(response.user);
+                this.props.history.push('/profile');
+                this.props.clearError();
             }
         })        
     }
@@ -60,9 +65,17 @@ export default class Login extends Component{
                             required 
                             className='input'
                         /><br></br>
-                        <input type='submit' className='buttons'  />
+                        <input type='submit' className='buttons'  /><br></br>
+                        <Link to='/signup'><input type='button' value='Sign up' className='buttons' /></Link><br></br>
+                        {this.props.error == '' ?
+                                null
+                                :
+                                <>
+                                    <label className='error'>{this.props.error}</label>
+                                </>
+                            }
                     </form>
-                    <Link to='/signup'><input type='button' value='Sign up' className='buttons' /></Link>
+
                 </div>
             </div>
         )
