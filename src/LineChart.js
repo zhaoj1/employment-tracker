@@ -26,68 +26,7 @@ export default class LineChart extends Component {
                     ]
                     :
                     null
-        // chartData = this.props.selectedChart == 'jobs' ? 
-        //     [
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '01').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '02').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '03').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '04').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '05').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '06').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '07').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '08').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '09').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '10').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '11').length,
-        //     props.jobs.filter(job => job.date_of.split('-')[1] == '12').length
-        //     ]
-        //     : this.props.selectedChart == 'interviews' ?
-        //         [
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '01').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '02').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '03').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '04').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '05').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '06').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '07').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '08').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '09').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '10').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '11').length,
-        //         props.interviews.filter(interview => interview.date_of.split('-')[1] == '12').length
-        //         ]
-        //         : this.props.selectedChart == 'algorithms' ? 
-        //             [
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '01').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '02').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '03').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '04').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '05').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '06').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '07').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '08').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '09').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '10').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '11').length,
-        //             props.algorithms.filter(algorithm => algorithm.date_of.split('-')[1] == '12').length
-        //             ]
-        //                 : this.props.selectedChart == 'meetups' ? 
-        //                     [
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '01').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '02').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '03').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '04').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '05').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '06').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '07').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '08').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '09').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '10').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '11').length,
-        //                     props.meetups.filter(meetup => meetup.date_of.split('-')[1] == '12').length
-        //                     ]
-        //                     : null
-
+        
         chartInfoType = this.props.selectedChart == 'jobs' ? 
             'Jobs Applied'
             : this.props.selectedChart == 'interviews' ?

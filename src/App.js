@@ -119,54 +119,49 @@ export default class App extends React.Component{
     });
   }
 
-  fetchJobs = () => {
-    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/jobs`)
+  fetchJobs = async () => {
+    const jobsInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/jobs`)
     .then(res => res.json())
-    .then(response => {
-        this.setState({
-            jobs: [...response.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
-        })
+
+    this.setState({
+        jobs: [...jobsInfo.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
     })
   }
 
-  fetchInterviews = () => {
-    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/interviews`)
+  fetchInterviews = async () => {
+    const interviewsInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/interviews`)
     .then(res => res.json())
-    .then(response => {
-        this.setState({
-            interviews: [...response.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
-        })
+
+    this.setState({
+        interviews: [...interviewsInfo.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
     })
   }
 
-  fetchMeetups = () => {
-    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/meetups`)
+  fetchMeetups = async () => {
+    const meetupsInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/meetups`)
     .then(res => res.json())
-    .then(response => {
-        this.setState({
-            meetups: [...response.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
-        })
+    
+    this.setState({
+        meetups: [...meetupsInfo.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
     })
   }
 
-  fetchAlgorithms = () => {
-    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/algorithms`)
+  fetchAlgorithms = async () => {
+    const algosInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/algorithms`)
     .then(res => res.json())
-    .then(response => {
-        this.setState({
-            algorithms: [...response.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
-        })
+    
+    this.setState({
+        algorithms: [...algosInfo.sort((a,b) => (a.date_of > b.date_of) ? 1 : ((b.date_of > a.date_of) ? -1 : 0))]
     })
   }
 
-  fetchNotes = () => {
-    fetch(`http://localhost:3000/users/${this.state.currentUser.id}/notes`)
+  fetchNotes = async () => {
+    const notesInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/notes`)
     .then(res => res.json())
-    .then(response => {
-        this.setState({
-            notes: [...response]
-        })
-    })
+    
+    this.setState({
+        notes: [...notesInfo]
+    })    
   }
 
   fetchInfo = () => {

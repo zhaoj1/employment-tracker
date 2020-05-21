@@ -57,7 +57,6 @@ export default class Profile extends Component{
                                     <div className='upcoming-title'>
                                         Upcoming Interviews
                                     </div>
-                                    {console.log(this.props.dateInfo)}
                                     {this.props.interviews.length > 0 ? 
                                         <UpcomingLineItems 
                                             items={this.props.interviews.filter(interview => interview.date_of >= this.props.dateInfo.today && interview.date_of <= this.props.dateInfo.nextWeek).filter((i,index) => index < 3)} 
