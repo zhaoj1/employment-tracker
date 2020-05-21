@@ -52,7 +52,7 @@ html, body, .app, #app>div, #root {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-60%);
   width: 100%;
   text-align: center;
 }
@@ -60,13 +60,10 @@ html, body, .app, #app>div, #root {
 .profile {
   height: 100%;
   width:70%;
-  border-style: solid;
   margin:auto;
-  transform: translate(0, 5%);
   padding-bottom: 20px;
   display:flex;
   flex-direction: column;
-  border-radius: 10px;
 }
 
 .profile-analytics-container {
@@ -150,9 +147,10 @@ html, body, .app, #app>div, #root {
 .page {
   width: 60%;
   margin: auto;
-  margin-top:10%;
+  margin-top:5%;
   text-align:center;
   padding: 10px;
+  height: 100%;
 }
 
 .page-contents{
@@ -163,11 +161,9 @@ html, body, .app, #app>div, #root {
 .page-left{
   float:left;
   width:45%;
-  border-style: solid;
   margin-top:2%;
   margin-bottom:2%;
   padding: 3px;
-  border-radius: 5px;
   background-color:white;
 }
 
@@ -228,10 +224,10 @@ html, body, .app, #app>div, #root {
 
 .notes{
   border-style: solid;
-  border-color :rgb(50,50,150);
+  border-color :rgb(125,125,225);
   margin: 3px 3px 3px 3px;
   padding-top: 3px;
-  background-color: rgb(50,50,150);
+  background-color: rgb(125,125,225);
   border-radius: 5px;
 }
 
