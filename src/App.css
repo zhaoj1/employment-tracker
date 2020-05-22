@@ -12,7 +12,6 @@ html, body, .app, #app>div, #root {
   top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  /* background-color: rgb(80,120,150); */
   height: 50px;
   font-size:25px;
 }
@@ -188,7 +187,7 @@ html, body, .app, #app>div, #root {
 
 .line-item{
   border-style: solid;
-  margin: 3px 3px 3px 3px;
+  margin: 0 0 3px 0;
   padding: 5px;
   display: flex;
   justify-content: space-between;

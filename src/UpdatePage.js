@@ -59,7 +59,7 @@ export default class UpdatePage extends Component{
     handleSubmit = async (event) => {
         event.preventDefault();
         if(this.props.currentPage === '/jobs'){ 
-            const updateJobs = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/jobs/${this.props.itemToUpdate.id}`, {
+            const updateJobs = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/jobs/${this.props.itemToUpdate.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ export default class UpdatePage extends Component{
                 this.props.fetchJobs();
             }
         } else if(this.props.currentPage === '/interviews'){ 
-            const updateInterviews = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/interviews/${this.props.itemToUpdate.id}`, {
+            const updateInterviews = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/interviews/${this.props.itemToUpdate.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ export default class UpdatePage extends Component{
                 this.props.fetchInterviews();
             }
         }else if(this.props.currentPage === '/algorithms'){ 
-            const updateAlgorithms = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/algorithms/${this.props.itemToUpdate.id}`, {
+            const updateAlgorithms = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/algorithms/${this.props.itemToUpdate.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ export default class UpdatePage extends Component{
                 this.props.fetchAlgorithms();
             }
         }else if(this.props.currentPage === '/meetups'){ 
-            const updateMeetups = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/meetups/${this.props.itemToUpdate.id}`, {
+            const updateMeetups = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/meetups/${this.props.itemToUpdate.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

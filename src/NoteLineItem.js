@@ -5,7 +5,7 @@ export default class NoteLineItem extends Component{
 
     handleDelete = async (event) => {
         event.preventDefault(); 
-        const deleteNote = await fetch(`http://localhost:3000/users/${this.props.currentUser.id + '/notes/' + this.props.note.id}`, {method: 'DELETE'})
+        const deleteNote = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id + '/notes/' + this.props.note.id}`, {method: 'DELETE'})
         if(deleteNote){
             this.props.fetchInfo();
         }

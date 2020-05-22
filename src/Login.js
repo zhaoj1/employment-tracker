@@ -22,7 +22,7 @@ export default class Login extends Component{
     handleSubmit = (event) => {
         event.preventDefault();
 
-        fetch(`http://localhost:3000/login`,{
+        fetch(`https://employment-tracker-backend.herokuapp.com/login`,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

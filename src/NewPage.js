@@ -23,7 +23,7 @@ export default class NewPage extends Component{
         event.preventDefault();
 
         if(this.props.currentPage === '/jobs'){ 
-            const postJobs = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/jobs`, {
+            const postJobs = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/jobs`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ export default class NewPage extends Component{
                 this.props.fetchJobs();
             }
         } else if (this.props.currentPage === '/interviews'){
-            const postInterviews = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/interviews`, {
+            const postInterviews = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/interviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export default class NewPage extends Component{
                 this.props.fetchInterviews();
             }
         } else if(this.props.currentPage === '/algorithms'){
-            const postAlgorithms = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/algorithms`, {
+            const postAlgorithms = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/algorithms`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ export default class NewPage extends Component{
                 this.props.fetchAlgorithms();
             }
         } else if(this.props.currentPage === '/meetups'){
-            const postMeetups = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/meetups`, {
+            const postMeetups = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/meetups`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

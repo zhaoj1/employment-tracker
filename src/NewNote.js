@@ -16,7 +16,7 @@ export default class NewNote extends Component{
     handleSubmit = async (event) => {
         event.preventDefault();
 
-        const postNotes = await fetch(`http://localhost:3000/users/${this.props.currentUser.id}/notes`, {
+        const postNotes = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.props.currentUser.id}/notes`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

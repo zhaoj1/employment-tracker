@@ -120,7 +120,7 @@ export default class App extends React.Component{
   }
 
   fetchJobs = async () => {
-    const jobsInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/jobs`)
+    const jobsInfo = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.state.currentUser.id}/jobs`)
     .then(res => res.json())
 
     this.setState({
@@ -129,7 +129,7 @@ export default class App extends React.Component{
   }
 
   fetchInterviews = async () => {
-    const interviewsInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/interviews`)
+    const interviewsInfo = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.state.currentUser.id}/interviews`)
     .then(res => res.json())
 
     this.setState({
@@ -138,7 +138,7 @@ export default class App extends React.Component{
   }
 
   fetchMeetups = async () => {
-    const meetupsInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/meetups`)
+    const meetupsInfo = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.state.currentUser.id}/meetups`)
     .then(res => res.json())
     
     this.setState({
@@ -147,7 +147,7 @@ export default class App extends React.Component{
   }
 
   fetchAlgorithms = async () => {
-    const algosInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/algorithms`)
+    const algosInfo = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.state.currentUser.id}/algorithms`)
     .then(res => res.json())
     
     this.setState({
@@ -156,7 +156,7 @@ export default class App extends React.Component{
   }
 
   fetchNotes = async () => {
-    const notesInfo = await fetch(`http://localhost:3000/users/${this.state.currentUser.id}/notes`)
+    const notesInfo = await fetch(`https://employment-tracker-backend.herokuapp.com/users/${this.state.currentUser.id}/notes`)
     .then(res => res.json())
     
     this.setState({
