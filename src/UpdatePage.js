@@ -341,6 +341,7 @@ export default class UpdatePage extends Component{
                                     :
                                     null
                     }
+                    <button className='buttons' onClick={this.props.closeModal} >Cancel</button>
                 </form>
             </div>
         )

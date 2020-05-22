@@ -54,6 +54,7 @@ export default class Signup extends Component{
     render(){
         return(
             <div className='wrapper'>
+                <h1>SIGN UP</h1>
                 <div className='login'>
                     <form className='signup-form' onSubmit={this.handleSubmit}>
                         <input 

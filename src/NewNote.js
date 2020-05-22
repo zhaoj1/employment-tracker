@@ -48,6 +48,7 @@ export default class NewNote extends Component{
                         rows='5'
                     ></textarea>
                     <input className='buttons' type='submit'></input>
+                    <button className='buttons' onClick={this.props.closeModal} >Cancel</button>
                 </form>
             </div>
         )

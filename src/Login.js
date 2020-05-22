@@ -45,6 +45,7 @@ export default class Login extends Component{
     render(){
         return(
             <div className='wrapper'>
+                <h1>LOGIN</h1>
                 <div className='login'>
                     <form className='login-form' onSubmit={this.handleSubmit}>
                         <input 

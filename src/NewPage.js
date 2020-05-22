@@ -282,6 +282,7 @@ export default class NewPage extends Component{
                                     :
                                     null
                     }
+                    <button className='buttons' onClick={this.props.closeModal} >Cancel</button>
                 </form>
             </div>
         )

@@ -51,7 +51,7 @@ html, body, .app, #app>div, #root {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-60%);
+  transform: translate(-50%,-65%);
   width: 100%;
   text-align: center;
 }
@@ -144,7 +144,7 @@ html, body, .app, #app>div, #root {
 }
 
 .page {
-  width: 60%;
+  width: 100%;
   margin: auto;
   margin-top:5%;
   text-align:center;
@@ -159,7 +159,7 @@ html, body, .app, #app>div, #root {
 
 .page-left{
   float:left;
-  width:45%;
+  width:47%;
   margin-top:2%;
   margin-bottom:2%;
   padding: 3px;
@@ -168,7 +168,7 @@ html, body, .app, #app>div, #root {
 
 .page-right{
   float: right;
-  width:50%;
+  width:47%;
   border-style: solid;
   margin-top:2%;
   margin-bottom:2%;
@@ -183,6 +183,7 @@ html, body, .app, #app>div, #root {
   font-weight: bold;
   margin-top: 10px;
   color: black;
+  text-align: center;
 }
 
 .line-item{
