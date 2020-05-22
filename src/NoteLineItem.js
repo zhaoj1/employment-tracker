@@ -14,7 +14,6 @@ export default class NoteLineItem extends Component{
     render(){
         return(
             <div className='note-line-item' >
-                {console.log(this.props.note.id)}
                 <label className='noteLineItemDesc'>{this.props.note.contents}</label>
                 <div className='lineItemBtn' >
                     <button onClick={(event) => this.handleDelete(event)} >X</button>
