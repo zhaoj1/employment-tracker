@@ -6,7 +6,8 @@ export default class Login extends Component{
 
     state = {
         username: '',
-        password: ''
+        password: '',
+        isLoading: false
     }
 
     componentDidMount(){
@@ -35,11 +36,14 @@ export default class Login extends Component{
             if (response.errors){
                 this.props.setError('Username or Password incorrect.');
             } else {
+                this.setState({isLoading: true})
                 this.props.setCurrentUser(response.user);
                 this.props.history.push('/profile');
                 this.props.clearError();
             }
-        })        
+        })   
+        
+        this.setState({isLoading: false})
     }
 
     render(){
@@ -48,33 +52,39 @@ export default class Login extends Component{
                 <h1>LOGIN</h1>
                 <div className='login'>
                     <form className='login-form' onSubmit={this.handleSubmit}>
-                        <input 
-                            type='text' 
-                            name='username' 
-                            placeholder='Username' 
-                            value={this.state.username}
-                            onChange={this.handleChange}
-                            required 
-                            className='input'
-                        /><br></br>
-                        <input 
-                            type='password' 
-                            name='password' 
-                            placeholder='Password' 
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            required 
-                            className='input'
-                        /><br></br>
-                        <input type='submit' className='buttons'  /><br></br>
-                        <Link to='/signup'><input type='button' value='Sign up' className='buttons' /></Link><br></br>
+                        {this.state.isLoading ?
+                            <p>Loading...</p>
+                        :
+                            <>
+                                <input 
+                                    type='text' 
+                                    name='username' 
+                                    placeholder='Username' 
+                                    value={this.state.username}
+                                    onChange={this.handleChange}
+                                    required 
+                                    className='input'
+                                /><br></br>
+                                <input 
+                                    type='password' 
+                                    name='password' 
+                                    placeholder='Password' 
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                    required 
+                                    className='input'
+                                /><br></br>
+                                <input type='submit' className='buttons'  /><br></br>
+                                <Link to='/signup'><input type='button' value='Sign up' className='buttons' /></Link><br></br>
+                            </>
+                        }
                         {this.props.error == '' ?
-                                null
-                                :
-                                <>
-                                    <label className='error'>{this.props.error}</label>
-                                </>
-                            }
+                            null
+                            :
+                            <>
+                                <label className='error'>{this.props.error}</label>
+                            </>
+                        }
                     </form>
 
                 </div>
